@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- Tell the browser to be responsive to screen width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="/images/logo.png">
+	<title>YouMine</title>
+	
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i" rel="stylesheet">
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-md bg-light navbar-light">
+	
+	<!-- Logo will be here -->
+	<a class="navbar-brand" href="/"><img src="/images/logo.png" height="50" alt="logo" /></a>
+	<span class="logo-text align-text-bottom"><em>YOUMINE</em></span>
+	
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+	<!-- This is the navigation menu -->
+	<div class="collapse navbar-collapse" id="navbarNavDropdown">
+		<ul class="navbar-nav ml-auto stylish-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle navbarDropdownMenuLink" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Coins</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://xsg.youmine.xyz">SnowGem</a>
+					<a class="dropdown-item" href="https://nix.youmine.xyz">NIX</a>
+				</div>
+			</li>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle navbarDropdownMenuLink" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Calculator</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" target="_blank" href="https://www.crypto-coinz.net/crypto-calculator/">Crypto-Coinz</a>
+					<a class="dropdown-item" target="_blank" href="https://crypt0.zone/calculator/">Crypt0.zone</a>
+					<a class="dropdown-item" target="_blank" href="https://coincalculators.io/">Coin Calculators</a>
+				</div>
+			</li>
+			<li class="nav-item"> <a class="nav-link" href="https://discord.gg/" target="_blank">Discord</a> </li>
+		</ul>
+	</div>
+</nav>
+
+
+<div class="container-fluid">
+	<br>
+	<p>This is some text.</p>
+	
+	
+	
+	<button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Hooray!">Hover over me</button>
+	<br>
+	<br>
+	<div class="shadow p-4 mb-4 bg-white">Default shadow</div>
+	
+</div>
+
+
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<script>
+	$(document).ready(function(){
+		$('[data-toggle="tooltip"]').tooltip();
+	});
+	
+	$('.navbarDropdownMenuLink').on('mouseover', function () {
+		$(this).click();
+	});
+</script>
+
+</body>
+</html>
