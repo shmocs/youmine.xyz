@@ -21,7 +21,7 @@
 <body>
 
 
-<nav class="navbar navbar-expand-md bg-light navbar-light">
+<nav class="navbar _navbar-expand-md bg-light navbar-light">
 	
 	<!-- Logo will be here -->
 	<a class="navbar-brand" href="/"><img src="/images/logo.png" height="50" alt="logo" /></a>
@@ -96,6 +96,15 @@ $(document).ready(function(){
 	
 $('.navbarDropdownMenuLink').on('mouseover', function () {
 	//$(this).click();
+});
+
+$(document).click(function (event) {
+	var clickover = $(event.target);
+	var navbar = $(".navbar-collapse");
+	var _opened = navbar.hasClass("show");
+	if (_opened === true && !clickover.hasClass("navbar-toggle")) {
+		navbar.collapse('hide');
+	}
 });
 
 </script>
