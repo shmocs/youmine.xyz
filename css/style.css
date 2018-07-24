@@ -16,3 +16,19 @@
 		font-size: 20pt;
 	}
 }
+
+/* youmine code */
+.ym-code {
+	width: auto;
+	background-color: #fff;
+	padding: 8px 12px;
+	border-left: 4px solid #4CAF50;
+	word-wrap: break-word;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.ym-code, .ym-codespan {
+	font-family: Consolas, "courier new";
+	font-size: 16px;
+}
