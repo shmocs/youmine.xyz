@@ -36,3 +36,10 @@
 .coin-logo {
 	max-height: 30px;
 }
+
+
+.boxStatsList i.fa {
+	height: 15px;
+	width: 33px;
+	text-align: center;
+}
