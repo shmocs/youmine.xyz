@@ -37,7 +37,7 @@ function getStats(pool) {
 		success: function(data) {
 
 			if (pool == 'NIX') {
-				$('#statsBlocks' + pool).text(data.pools.nix.validBlocks);
+				$('#statsBlocks' + pool).text(data.pools.nix.poolStats.validBlocks);
 				$('#statsMiners' + pool).text(data.pools.nix.workerCount);
 				$('#statsWorkers' + pool).text(data.pools.nix.workerCount);
 				$('#statsHashrate' + pool).text(data.pools.nix.hashrateString);
