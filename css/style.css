@@ -16,6 +16,12 @@
 		font-size: 20pt;
 	}
 }
+@media screen and (max-width: 576px) {
+	.pool-stats {
+		border: 0 !important;
+		padding-bottom: 10px;
+	}
+}
 
 /* youmine code */
 .ym-code {
