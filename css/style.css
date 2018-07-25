@@ -49,3 +49,12 @@
 	width: 33px;
 	text-align: center;
 }
+
+
+.progress.active .progress-bar {
+	-webkit-transition: none !important;
+	transition: none !important;
+}
+.stats-progress .progress {
+	height: 0.4rem;
+}
