@@ -41,6 +41,14 @@ function getStats(pool) {
 				$('#statsMiners' + pool).text(data.pools.nix.workerCount);
 				$('#statsWorkers' + pool).text(data.pools.nix.workerCount);
 				$('#statsHashrate' + pool).text(data.pools.nix.hashrateString);
+				$('#statsLuckDays' + pool).text(data.pools.nix.luckDays);
+
+				$('#statsNetworkHash' + pool).text(data.pools.nix.poolStats.networkHashString);
+				$('#statsNetworkDiff' + pool).text(parseFloat(data.pools.nix.poolStats.networkDiff).toFixed(2));
+				$('#statsNetworkBlocks' + pool).text(data.pools.nix.poolStats.networkBlocks);
+				$('#statsNetworkConnections' + pool).text(data.pools.nix.poolStats.networkConnections);
+				$('#statsNetworkVersion' + pool).text(data.pools.nix.poolStats.networkVersion);
+				$('#statsNetworkProtocolVersion' + pool).attr('data-original-title', data.pools.nix.poolStats.networkProtocolVersion);
 			}
 
 			if (pool == 'XSG') {
@@ -49,13 +57,16 @@ function getStats(pool) {
 				$('#statsWorkers' + pool).text(data.pools.snowgem.workerCount);
 				$('#statsHashrate' + pool).text(data.pools.snowgem.hashrateString);
 				$('#statsLuckDays' + pool).text(data.pools.snowgem.luckDays);
-				$('#statsValidBlocks' + pool).text(data.pools.snowgem.poolStats.validBlocks);
-				$('#statsTotalPaid' + pool).text((parseFloat(data.pools.snowgem.poolStats.totalPaid)).toFixed(8));
-				$('#statsNetworkBlocks' + pool).text(data.pools.snowgem.poolStats.networkBlocks);
-				$('#statsNetworkDiff' + pool).text(parseFloat(data.pools.snowgem.poolStats.networkDiff).toFixed(2));
+
+				//$('#statsValidBlocks' + pool).text(data.pools.snowgem.poolStats.validBlocks);
+				//$('#statsTotalPaid' + pool).text((parseFloat(data.pools.snowgem.poolStats.totalPaid)).toFixed(8));
+
 				$('#statsNetworkSols' + pool).text(data.pools.snowgem.poolStats.networkSolsString);
+				$('#statsNetworkDiff' + pool).text(parseFloat(data.pools.snowgem.poolStats.networkDiff).toFixed(2));
+				$('#statsNetworkBlocks' + pool).text(data.pools.snowgem.poolStats.networkBlocks);
 				$('#statsNetworkConnections' + pool).text(data.pools.snowgem.poolStats.networkConnections);
 				$('#statsNetworkVersion' + pool).text(data.pools.snowgem.poolStats.networkVersion);
+				$('#statsNetworkProtocolVersion' + pool).attr('data-original-title', data.pools.snowgem.poolStats.networkProtocolVersion);
 
 			}
 
@@ -79,7 +90,7 @@ function getStats(pool) {
 
 function restartTimer(pool) {
 
-	$('.stats-progress-'+pool+' .progress-bar').animate({width: "100%"}, 10000, function () {})
+	$('.stats-progress-'+pool+' .progress-bar').animate({width: "100%"}, 30000, function () {})
 		.promise()
 		.done(function(){
 			$(this).removeClass('progress-bar-animated').removeClass('progress-bar-striped');
