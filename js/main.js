@@ -42,6 +42,7 @@ function getStats(pool) {
 				$('#statsWorkers' + pool).text(data.pools.nix.workerCount);
 				$('#statsHashrate' + pool).text(data.pools.nix.hashrateString);
 				$('#statsLuckDays' + pool).text(data.pools.nix.luckDays);
+				$('#statsLuckHours' + pool).text(parseFloat(data.pools.nix.luckHours).toFixed(1));
 
 				$('#statsNetworkHash' + pool).text(data.pools.nix.poolStats.networkHashString);
 				$('#statsNetworkDiff' + pool).text(parseFloat(data.pools.nix.poolStats.networkDiff).toFixed(2));
@@ -57,6 +58,7 @@ function getStats(pool) {
 				$('#statsWorkers' + pool).text(data.pools.snowgem.workerCount);
 				$('#statsHashrate' + pool).text(data.pools.snowgem.hashrateString);
 				$('#statsLuckDays' + pool).text(data.pools.snowgem.luckDays);
+				$('#statsLuckHours' + pool).text(parseFloat(data.pools.snowgem.luckHours).toFixed(1));
 
 				//$('#statsValidBlocks' + pool).text(data.pools.snowgem.poolStats.validBlocks);
 				//$('#statsTotalPaid' + pool).text((parseFloat(data.pools.snowgem.poolStats.totalPaid)).toFixed(8));

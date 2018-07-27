@@ -79,8 +79,8 @@
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateXSG">0.00 Sol/s</span> (Now)</div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / MyHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>Luck <span id="statsLuckDaysXSG">0.004</span> Days
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>Luck <span id="statsLuckDaysXSG">0.00</span> Days (~ <span id="statsLuckHoursXSG">0</span> hours)
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocksXSG">0</span> Blocks found</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMinersXSG">0</span> Miners</div>
@@ -91,7 +91,10 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsXSG">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffXSG">0</span></div>
-							<div><i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small> <span id="statsNetworkBlocksXSG">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~60 seconds a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a href="https://insight.snowgem.org/" target="_blank"><span id="statsNetworkBlocksXSG">0</span></a>
+							</div>
 							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsXSG">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionXSG">
 								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionXSG">//</span></small>
@@ -130,8 +133,8 @@
 						<div class="pool-stats col-sm-6 col-s-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateNIX">0.00 MH/s</span> (Now)</div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / MyHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>Luck <span id="statsLuckDaysNIX">0</span> Days
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>Luck <span id="statsLuckDaysNIX">0</span> Days (~ <span id="statsLuckHoursNIX">0</span> hours)
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocksNIX">0</span> Blocks found</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMinersNIX">0</span> Miners</div>
@@ -141,7 +144,9 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkHashNIX">0.00 GH/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffNIX">0</span></div>
-							<div><i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small> <span id="statsNetworkBlocksNIX">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 120s. Every ~120 seconds a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small> <a href="https://blockchain.nixplatform.io/" target="_blank"><span id="statsNetworkBlocksNIX">0</span></a>
+							</div>
 							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsNIX">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionNIX">
 								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionNIX">//</span></small>
