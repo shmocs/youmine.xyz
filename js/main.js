@@ -39,7 +39,7 @@ function getStats(pool) {
 			if (pool == 'NIX') {
 				$('#statsBlocks' + pool).text(data.pools.nix.poolStats.validBlocks);
 				$('#statsMiners' + pool).text(data.pools.nix.workerCount);
-				$('#statsWorkers' + pool).text(data.pools.nix.workerCount);
+				$('#statsWorkers' + pool).text(data.pools.nix.minerCount);
 				$('#statsHashrate' + pool).text(data.pools.nix.hashrateString);
 				$('#statsLuckDays' + pool).text(data.pools.nix.luckDays);
 				$('#statsLuckHours' + pool).text(parseFloat(data.pools.nix.luckHours).toFixed(1));
