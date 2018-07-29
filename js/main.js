@@ -53,7 +53,7 @@ function getStats(pool) {
 			}
 
 			if (pool == 'XSG') {
-				$('#statsBlocks' + pool).text(data.pools.snowgem.validBlocks);
+				$('#statsBlocks' + pool).text(data.pools.snowgem.poolStats.validBlocks);
 				$('#statsMiners' + pool).text(data.pools.snowgem.minerCount);
 				$('#statsWorkers' + pool).text(data.pools.snowgem.workerCount);
 				$('#statsHashrate' + pool).text(data.pools.snowgem.hashrateString);
