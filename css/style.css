@@ -44,7 +44,7 @@
 }
 
 
-.boxStatsList i.fa {
+.boxStatsList i.fa, .boxStatsList i.fas, .boxStatsList i.fab {
 	height: 15px;
 	width: 33px;
 	text-align: center;
