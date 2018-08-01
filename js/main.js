@@ -27,6 +27,51 @@ networkVersion	/MagicBean:2.0.4-6/
 networkProtocolVersion	170006
 * */
 
+
+function getMarketStats(ticker) {
+
+	$.ajax({
+		url: 'https://api.coinmarketcap.com/v2/ticker/'+ticker+'/?convert=BTC',
+		dataType: 'json',
+		success: function (cmc_json) {
+
+			var usd = cmc_json.data.quotes.USD;
+			var btc = cmc_json.data.quotes.BTC;
+			var symbol = cmc_json.data.symbol;
+
+			$('#statsMarket'+symbol+'PriceUSD').text(usd.price.toFixed(2));
+			$('#statsMarket'+symbol+'PriceBTC').text(btc.price.toFixed(8));
+
+			$('#'+symbol+'btc1h').text(btc.percent_change_1h);
+			$('#'+symbol+'btc24h').text(btc.percent_change_24h);
+
+			if (btc.percent_change_1h != 0)
+			if (btc.percent_change_1h < 0) {
+				$('#'+symbol+'btc1hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-up').addClass('fa-arrow-down');
+				$('#'+symbol+'btc1hArrow').parent().removeClass('text-success').addClass('text-danger');
+			} else {
+				$('#'+symbol+'btc1hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-down').addClass('fa-arrow-up');
+			}
+
+
+			if (btc.percent_change_24h != 0)
+			if (btc.percent_change_24h < 0) {
+				$('#'+symbol+'btc24hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-up').addClass('fa-arrow-down');
+				$('#'+symbol+'btc24hArrow').parent().removeClass('text-success').addClass('text-danger');
+			} else {
+				$('#'+symbol+'btc24hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-down').addClass('fa-arrow-up');
+			}
+
+			$('#statsMarket'+symbol+'VolumeUSD').text(usd.volume_24h.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+			$('#statsMarket'+symbol+'VolumeBTC').text(btc.volume_24h.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+
+		}
+	});
+}
+getMarketStats(2912); //XSG
+getMarketStats(2991); //NIX
+
+
 function getStats(pool) {
 
 	$('.loader'+pool).addClass('fa-spin').show();

@@ -61,7 +61,19 @@
 
 
 <div class="container-fluid">
-	<p><br></p>
+
+	<div class="shadow p-4 mb-4 bg-white why-mine-us">
+		Why <code>mine</code> with us?
+		<span class="text-primary linkborder"><i class="fa fa-thumbs-up"></i><small> Low fees</small></span>
+		<a href="javascript:void(0)" class="linkborder"><span data-toggle="tooltip" data-placement="top" data-original-title="EU - Germany" class="text-success linkborder"><i class="fa fa-server"></i><small> Dedicated server</small></span></a>
+		<span class="text-info"><i class="fab fa-amazon-pay"></i><small> Low payout</small></span>
+		<span class="text-warning"><i class="fa fa-signal"></i><small> VarDiff enabled mining</small></span>
+		<span class="text-danger"><i class="fa fa-user-shield"></i><small> TLS Stratum (zhash)</small></span>
+		<span class="text-secondary"><i class="fa fa-user-secret"></i><small> Anonymous Mining</small></span>
+		<span class="text-info"><i class="fab fa-usb"></i><small> PPLNT shares payout</small></span>
+		<span class="text-info"><i class="fa fa-tv"></i><small> Custom Pool Theme</small></span>
+		<a href="javascript:void(0)" class="linkborder"><span data-toggle="tooltip" data-placement="top" data-original-title="work in progress ..." class="text-muted"><i class="fa fa-coins"></i><small> Custom Payouts</small></span></a>
+	</div>
 
 	
 	<div class="row">
@@ -87,8 +99,8 @@
 								<i class="fa fa-dice"></i>Luck ~ <span id="statsLuckHoursXSG">0</span> hours
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocksXSG">0</span> Blocks found</div>
-							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.9% - to YouMine.xyz<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">1%</span>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to YouMine.xyz<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">0.7%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMinersXSG">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkersXSG">0</span> Workers</div>
@@ -113,9 +125,27 @@
 					</div>
 					
 					<div class="stats-progress stats-progress-XSG my-2">
-					<div class="progress progress-striped active">
-						<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
 					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketXSGPriceUSD">0.20</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketXSGPriceBTC">0.00001985</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="XSGbtc1hArrow" class="fa fa-arrow-right"></i>1h: <span id="XSGbtc1h">0.00</span>%</td>
+								<td class="text-success"><i id="XSGbtc24hArrow" class="fa fa-arrow-right"></i>24h: <span id="XSGbtc24h">0.00</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2">24h volume: $<span id="statsMarketXSGVolumeUSD">36415.06</span> (<span id="statsMarketXSGVolumeBTC">100.99</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
 					</div>
 					
 					
@@ -147,8 +177,8 @@
 								<i class="fa fa-dice"></i>Luck ~ <span id="statsLuckHoursNIX">0</span> hours
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocksNIX">0</span> Blocks found</div>
-							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.9% - to YouMine.xyz<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">1%</span>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to YouMine.xyz<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">0.7%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMinersNIX">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkersNIX">0</span> Workers</div>
@@ -177,6 +207,24 @@
 						</div>
 					</div>
 					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketNIXPriceUSD">0.20</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketNIXPriceBTC">0.00001985</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="NIXbtc1hArrow" class="fa fa-arrow-right"></i>1h: <span id="NIXbtc1h">0.00</span>%</td>
+								<td class="text-success"><i id="NIXbtc24hArrow" class="fa fa-arrow-right"></i>24h: <span id="NIXbtc24h">0.00</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2">24h volume: $<span id="statsMarketNIXVolumeUSD">36415.06</span> (<span id="statsMarketNIXVolumeBTC">100.99</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
 					<div align="center">
 						<i class="fa fa-bomb"></i> <a href="https://nix.youmine.xyz">Let's mine some NIX</a>
 					</div>
@@ -185,7 +233,7 @@
 			</div>
 		</div>
 		
-		<div class="col-xl-3 col-lg-3 col-md-12">
+		<div class="col-xl-4 col-lg-12 d-none">
 			<div class="card mb-4 shadow">
 				<div class="card-header">
 					
@@ -223,7 +271,6 @@
 	<button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Hooray!">Hover over me</button>
 	<br>
 	<br>
-	<div class="shadow p-4 mb-4 bg-white">Default shadow</div>
 	
 	
 	<div class="ym-code mb-4 bg-light">
