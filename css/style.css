@@ -49,10 +49,8 @@
 	width: 33px;
 	text-align: center;
 }
-.why-mine-us i.fa, .why-mine-us i.fas, .why-mine-us i.fab {
-	height: 15px;
-	width: 30px;
-	text-align: right;
+.why-mine-us span {
+	margin-right: 10px;
 }
 
 
