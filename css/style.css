@@ -1,16 +1,17 @@
+body {
+	font-family: "Poppins", sans-serif;
+}
 
 .logo-text {
 	font-size: 30pt;
 	font-weight: 300;
-	font-family: 'Lato', sans-serif;
 }
-/* On screens that are 600px or less, set the background color to olive */
+
 @media screen and (max-width: 600px) {
 	.logo-text {
 		font-size: 25pt;
 	}
 }
-/* On screens that are 480 or less, set the background color to olive */
 @media screen and (max-width: 480px) {
 	.logo-text {
 		font-size: 20pt;
