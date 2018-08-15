@@ -5,6 +5,7 @@ body {
 .logo-text {
 	font-size: 30pt;
 	font-weight: 300;
+	vertical-align: middle;
 }
 
 @media screen and (max-width: 600px) {
