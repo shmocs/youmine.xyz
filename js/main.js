@@ -109,13 +109,13 @@ function getStats(coin) {
 			//console.log(data.poolStats)
 
 			setTimeout(function (args) {
-				$('.loader'+pool).removeClass('fa-spin').hide()
+				$('.loader'+coin).removeClass('fa-spin').hide()
 			}, 500);
 
-			$('.stats-progress-'+pool+' .progress-bar').addClass('progress-bar-animated').addClass('progress-bar-striped');
+			$('.stats-progress-'+coin+' .progress-bar').addClass('progress-bar-animated').addClass('progress-bar-striped');
 
 			setTimeout(function (args) {
-				restartTimer(pool);
+				restartTimer(coin);
 			}, 1000);
 		},
 		error: function() {
@@ -124,14 +124,14 @@ function getStats(coin) {
 	});
 }
 
-function restartTimer(pool) {
+function restartTimer(coin) {
 
-	$('.stats-progress-'+pool+' .progress-bar').animate({width: "100%"}, 30000, function () {})
+	$('.stats-progress-'+coin+' .progress-bar').animate({width: "100%"}, 30000, function () {})
 		.promise()
 		.done(function(){
 			$(this).removeClass('progress-bar-animated').removeClass('progress-bar-striped');
 			$(this).css({width: "0"});
-			getStats(pool);
+			getStats(coin);
 		});
 }
 
