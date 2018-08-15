@@ -87,35 +87,36 @@ function getStats(coin) {
 		dataType: 'json',
 		success: function(data) {
 
-			$('#statsBlocks' + coin).text(data.poolStats.validBlocks);
-			$('#statsMiners' + coin).text(data.minerCount);
-			$('#statsWorkers' + coin).text(data.workerCount);
-			$('#statsHashrate' + coin).text(data.hashrateString);
-			$('#statsLuckDays' + coin).text(data.luckDays);
-			$('#statsLuckHours' + coin).text(parseFloat(data.luckHours).toFixed(1));
+			$('#statsBlocks' + data.symbol).text(data.poolStats.validBlocks);
+			$('#statsMiners' + data.symbol).text(data.minerCount);
+			$('#statsWorkers' + data.symbol).text(data.workerCount);
+			$('#statsHashrate' + data.symbol).text(data.hashrateString);
+			$('#statsLuckDays' + data.symbol).text(data.luckDays);
+			$('#statsLuckHours' + data.symbol).text(parseFloat(data.luckHours).toFixed(1));
 
-			if (pool == 'snowgem') {
-				$('#statsNetworkSols' + coin).text(data.poolStats.networkSolsString);
+			if (data.name == 'snowgem') {
+				$('#statsNetworkSols' + data.symbol).text(data.poolStats.networkSolsString);
 			} else {
-				$('#statsNetworkHash' + coin).text(data.poolStats.networkHashString);
+				$('#statsNetworkHash' + data.symbol).text(data.poolStats.networkHashString);
 			}
 
-			$('#statsNetworkDiff' + coin).text(parseFloat(data.poolStats.networkDiff).toFixed(2));
-			$('#statsNetworkBlocks' + coin).text(data.poolStats.networkBlocks);
-			$('#statsNetworkConnections' + coin).text(data.poolStats.networkConnections);
-			$('#statsNetworkVersion' + coin).text(data.poolStats.networkVersion);
-			$('#statsNetworkProtocolVersion' + coin).attr('data-original-title', data.poolStats.networkProtocolVersion);
+			$('#statsNetworkDiff' + data.symbol).text(parseFloat(data.poolStats.networkDiff).toFixed(2));
+			$('#statsNetworkBlocks' + data.symbol).text(data.poolStats.networkBlocks);
+			$('#statsNetworkConnections' + data.symbol).text(data.poolStats.networkConnections);
+			$('#statsNetworkVersion' + data.symbol).text(data.poolStats.networkVersion);
+			$('#statsNetworkProtocolVersion' + data.symbol).attr('data-original-title', data.poolStats.networkProtocolVersion);
 
-			//console.log(data.poolStats)
+			//console.log(data.symbol);
+			//console.log(data.poolStats);
 
 			setTimeout(function (args) {
-				$('.loader'+coin).removeClass('fa-spin').hide()
+				$('.loader'+data.symbol).removeClass('fa-spin').hide()
 			}, 500);
 
-			$('.stats-progress-'+coin+' .progress-bar').addClass('progress-bar-animated').addClass('progress-bar-striped');
+			$('.stats-progress-'+data.symbol+' .progress-bar').addClass('progress-bar-animated').addClass('progress-bar-striped');
 
 			setTimeout(function (args) {
-				restartTimer(coin);
+				restartTimer(data.symbol);
 			}, 1000);
 		},
 		error: function() {
