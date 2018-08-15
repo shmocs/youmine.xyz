@@ -72,52 +72,41 @@ getMarketStats(2912); //XSG
 getMarketStats(2991); //NIX
 
 
-function getStats(pool) {
+function getStats(coin) {
 
-	$('.loader'+pool).addClass('fa-spin').show();
+	$('.loader'+coin).addClass('fa-spin').show();
+
+	if (coin == 'XSG') {
+		pool = 'snowgem';
+	} else {
+		pool = coin.toLowerCase();
+	}
 
 	$.ajax({
 		url: 'https://'+pool+'.youmine.xyz/api/stats',
 		dataType: 'json',
 		success: function(data) {
 
-			if (pool == 'NIX') {
-				$('#statsBlocks' + pool).text(data.pools.nix.poolStats.validBlocks);
-				$('#statsMiners' + pool).text(data.pools.nix.minerCount);
-				$('#statsWorkers' + pool).text(data.pools.nix.workerCount);
-				$('#statsHashrate' + pool).text(data.pools.nix.hashrateString);
-				$('#statsLuckDays' + pool).text(data.pools.nix.luckDays);
-				$('#statsLuckHours' + pool).text(parseFloat(data.pools.nix.luckHours).toFixed(1));
+			$('#statsBlocks' + coin).text(data.poolStats.validBlocks);
+			$('#statsMiners' + coin).text(data.minerCount);
+			$('#statsWorkers' + coin).text(data.workerCount);
+			$('#statsHashrate' + coin).text(data.hashrateString);
+			$('#statsLuckDays' + coin).text(data.luckDays);
+			$('#statsLuckHours' + coin).text(parseFloat(data.luckHours).toFixed(1));
 
-				$('#statsNetworkHash' + pool).text(data.pools.nix.poolStats.networkHashString);
-				$('#statsNetworkDiff' + pool).text(parseFloat(data.pools.nix.poolStats.networkDiff).toFixed(2));
-				$('#statsNetworkBlocks' + pool).text(data.pools.nix.poolStats.networkBlocks);
-				$('#statsNetworkConnections' + pool).text(data.pools.nix.poolStats.networkConnections);
-				$('#statsNetworkVersion' + pool).text(data.pools.nix.poolStats.networkVersion);
-				$('#statsNetworkProtocolVersion' + pool).attr('data-original-title', data.pools.nix.poolStats.networkProtocolVersion);
+			if (pool == 'snowgem') {
+				$('#statsNetworkSols' + coin).text(data.poolStats.networkSolsString);
+			} else {
+				$('#statsNetworkHash' + coin).text(data.poolStats.networkHashString);
 			}
 
-			if (pool == 'XSG') {
-				$('#statsBlocks' + pool).text(data.pools.snowgem.poolStats.validBlocks);
-				$('#statsMiners' + pool).text(data.pools.snowgem.minerCount);
-				$('#statsWorkers' + pool).text(data.pools.snowgem.workerCount);
-				$('#statsHashrate' + pool).text(data.pools.snowgem.hashrateString);
-				$('#statsLuckDays' + pool).text(data.pools.snowgem.luckDays);
-				$('#statsLuckHours' + pool).text(parseFloat(data.pools.snowgem.luckHours).toFixed(1));
+			$('#statsNetworkDiff' + coin).text(parseFloat(data.poolStats.networkDiff).toFixed(2));
+			$('#statsNetworkBlocks' + coin).text(data.poolStats.networkBlocks);
+			$('#statsNetworkConnections' + coin).text(data.poolStats.networkConnections);
+			$('#statsNetworkVersion' + coin).text(data.poolStats.networkVersion);
+			$('#statsNetworkProtocolVersion' + coin).attr('data-original-title', data.poolStats.networkProtocolVersion);
 
-				//$('#statsValidBlocks' + pool).text(data.pools.snowgem.poolStats.validBlocks);
-				//$('#statsTotalPaid' + pool).text((parseFloat(data.pools.snowgem.poolStats.totalPaid)).toFixed(8));
-
-				$('#statsNetworkSols' + pool).text(data.pools.snowgem.poolStats.networkSolsString);
-				$('#statsNetworkDiff' + pool).text(parseFloat(data.pools.snowgem.poolStats.networkDiff).toFixed(2));
-				$('#statsNetworkBlocks' + pool).text(data.pools.snowgem.poolStats.networkBlocks);
-				$('#statsNetworkConnections' + pool).text(data.pools.snowgem.poolStats.networkConnections);
-				$('#statsNetworkVersion' + pool).text(data.pools.snowgem.poolStats.networkVersion);
-				$('#statsNetworkProtocolVersion' + pool).attr('data-original-title', data.pools.snowgem.poolStats.networkProtocolVersion);
-
-			}
-
-			//console.log(data.pools.snowgem.poolStats)
+			//console.log(data.poolStats)
 
 			setTimeout(function (args) {
 				$('.loader'+pool).removeClass('fa-spin').hide()
