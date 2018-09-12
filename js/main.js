@@ -69,7 +69,7 @@ function getMarketStats(ticker) {
 	});
 }
 getMarketStats(2912); //XSG
-getMarketStats(2991); //NIX
+//getMarketStats(2991); //NIX
 
 
 function getStats(coin) {
@@ -137,4 +137,4 @@ function restartTimer(coin) {
 }
 
 getStats('XSG');
-getStats('NIX');
+//getStats('NIX');
