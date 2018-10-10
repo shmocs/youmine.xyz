@@ -69,7 +69,7 @@ function getMarketStats(ticker) {
 	});
 }
 getMarketStats(2912); //XSG
-//getMarketStats(2991); //NIX
+getMarketStats(3029); //ZEL
 
 
 function getStats(coin) {
@@ -78,6 +78,8 @@ function getStats(coin) {
 
 	if (coin == 'XSG') {
 		pool = 'snowgem';
+	} else if (coin == 'ZEL') {
+		pool = 'zelcash';
 	} else {
 		pool = coin.toLowerCase();
 	}
@@ -137,4 +139,4 @@ function restartTimer(coin) {
 }
 
 getStats('XSG');
-//getStats('NIX');
+getStats('ZEL');

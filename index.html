@@ -50,6 +50,7 @@
 				<a class="nav-link dropdown-toggle navbarDropdownMenuLink" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-coins"></i> Coins</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="https://snowgem.youmine.xyz">SnowGem</a>
+					<a class="dropdown-item" href="https://zelcash.youmine.xyz">ZelCash</a>
 				</div>
 			</li>
 			<li class="nav-item dropdown">
@@ -116,7 +117,7 @@
 							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to YouMine.xyz<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
 								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">0.7%</span>-->
 							<!--</div>-->
-							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Until 2018-09-30 23:59:59 (UTC) pool fee is 0 !">
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Until 2018-10-31 23:59:59 (UTC) pool fee is 0 !">
 								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">0.0%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMinersXSG">0</span> Miners</div>
@@ -168,6 +169,87 @@
 					
 					<div align="center">
 						<i class="fa fa-bomb"></i> <a href="https://snowgem.youmine.xyz">Let's mine some SnowGems</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
+					<a href="https://zelcash.youmine.xyz" class="text-secondary">
+					<div class="d-flex flex-row">
+						<div class="p-0"><img src="/images/zelcash.png" alt="ZEL" class="coin-logo" /></div>
+						<div class="px-2 pt-1">ZelCash</div>
+						<div class="ml-auto align-self-center"><i class="loaderZEL fa fa-sync-alt fa-spin"></i></div>
+					</div>
+					</a>
+				</div>
+				<div class="card-body">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateZEL">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>Luck ~ <span id="statsLuckHoursZEL">0</span> hours
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksZEL">0</span> Blocks found</div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to YouMine.xyz<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">0.7%</span>-->
+							<!--</div>-->
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Until 2018-10-31 23:59:59 (UTC) pool fee is 0 !">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">0.0%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersZEL">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersZEL">0</span> Workers</div>
+
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsZEL">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffZEL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a href="https://insight.snowgem.org/" target="_blank"><span id="statsNetworkBlocksZEL">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsZEL">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsZEL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionZEL">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionZEL">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-ZEL my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketZELPriceUSD">0.00</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketZELPriceBTC">0.00000000</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="ZELbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="ZELbtc1h">0.00</span>%</td>
+								<td class="text-success"><i id="ZELbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="ZELbtc24h">0.00</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketZELVolumeUSD">0.00</span> (<span id="statsMarketZELVolumeBTC">0.00</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a href="https://zelcash.youmine.xyz">Let's mine some ZelCash</a>
 					</div>
 				</div>
 			</div>
