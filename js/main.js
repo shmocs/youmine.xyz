@@ -96,7 +96,7 @@ function getStats(coin) {
 			$('#statsLuckDays' + data.symbol).text(data.luckDays);
 			$('#statsLuckHours' + data.symbol).text(parseFloat(data.luckHours).toFixed(1));
 
-			if (data.name == 'snowgem') {
+			if (data.name == 'snowgem' || data.name == 'zelcash') {
 				$('#statsNetworkSols' + data.symbol).text(data.poolStats.networkSolsString);
 			} else {
 				$('#statsNetworkHash' + data.symbol).text(data.poolStats.networkHashString);
