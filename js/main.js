@@ -70,6 +70,7 @@ function getMarketStats(ticker) {
 }
 getMarketStats(2912); //XSG
 getMarketStats(3029); //ZEL
+//getMarketStats(9999); //ZERC
 
 
 function getStats(coin) {
@@ -80,6 +81,8 @@ function getStats(coin) {
 		pool = 'snowgem';
 	} else if (coin == 'ZEL') {
 		pool = 'zelcash';
+	} else if (coin == 'ZERC') {
+		pool = 'zeroclassic';
 	} else {
 		pool = coin.toLowerCase();
 	}
@@ -96,7 +99,7 @@ function getStats(coin) {
 			$('#statsLuckDays' + data.symbol).text(data.luckDays);
 			$('#statsLuckHours' + data.symbol).text(parseFloat(data.luckHours).toFixed(1));
 
-			if (data.name == 'snowgem' || data.name == 'zelcash') {
+			if (data.name == 'snowgem' || data.name == 'zelcash' || data.name == 'zeroclassic') {
 				$('#statsNetworkSols' + data.symbol).text(data.poolStats.networkSolsString);
 			} else {
 				$('#statsNetworkHash' + data.symbol).text(data.poolStats.networkHashString);
@@ -140,3 +143,4 @@ function restartTimer(coin) {
 
 getStats('XSG');
 getStats('ZEL');
+getStats('ZERC');
