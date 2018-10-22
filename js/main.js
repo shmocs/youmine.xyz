@@ -88,7 +88,7 @@ function getStats(coin) {
 	} else if (coin == 'BZE') {
 		pool = 'bzedge';
 	} else if (coin == 'SAFE') {
-		pool = 'bzedge';
+		pool = 'safecoin';
 	} else {
 		pool = coin.toLowerCase();
 	}
