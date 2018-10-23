@@ -103,14 +103,22 @@ function getStats(coin) {
 			$('#statsWorkers' + data.symbol).text(data.workerCount);
 			$('#statsHashrate' + data.symbol).text(data.hashrateString);
 			$('#statsLuckDays' + data.symbol).text(data.luckDays);
-			$('#statsLuckHours' + data.symbol).text(parseFloat(data.luckHours).toFixed(1));
 
-			if (data.name == 'snowgem' || data.name == 'zelcash' || data.name == 'zeroclassic' || data.name == 'bzedge' || data.name == 'safecoin') {
-				$('#statsNetworkSols' + data.symbol).text(data.poolStats.networkSolsString);
+
+			var luckType = 'hours';
+			var luckValue = data.luckHours;
+
+			if (luckValue < 0.5) {
+				luckValue = parseFloat(luckValue * 60).toFixed(0);
+				luckType = 'minutes';
 			} else {
-				$('#statsNetworkHash' + data.symbol).text(data.poolStats.networkHashString);
+				luckValue = parseFloat(luckValue).toFixed(1);
 			}
 
+			$('#statsLuckValue' + data.symbol).text(luckValue);
+			$('#statsLuckType' + data.symbol).text(luckType);
+
+			$('#statsNetworkSols' + data.symbol).text(data.poolStats.networkSolsString);
 			$('#statsNetworkDiff' + data.symbol).text(parseFloat(data.poolStats.networkDiff).toFixed(2));
 			$('#statsNetworkBlocks' + data.symbol).text(data.poolStats.networkBlocks);
 			$('#statsNetworkConnections' + data.symbol).text(data.poolStats.networkConnections);
