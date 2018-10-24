@@ -2,20 +2,15 @@ body {
 	font-family: "Poppins", sans-serif;
 }
 
-.logo-text {
-	font-size: 30pt;
-	font-weight: 300;
-	vertical-align: middle;
-}
 
 @media screen and (max-width: 600px) {
-	.logo-text {
-		font-size: 25pt;
+	.logo {
+		height: 80px;
 	}
 }
 @media screen and (max-width: 480px) {
-	.logo-text {
-		font-size: 20pt;
+	.logo {
+		height: 60px;
 	}
 }
 @media screen and (max-width: 576px) {

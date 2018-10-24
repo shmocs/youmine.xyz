@@ -94,7 +94,7 @@ function getStats(coin) {
 	}
 
 	$.ajax({
-		url: 'https://'+pool+'.youmine.xyz/api/stats',
+		url: 'https://'+pool+'.equihub.pro/api/stats',
 		dataType: 'json',
 		success: function(data) {
 
