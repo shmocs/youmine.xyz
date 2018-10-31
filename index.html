@@ -492,6 +492,85 @@
 			</div>
 		</div>
 		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
+					<a href="https://vidulum.equihub.pro" class="text-secondary">
+					<div class="d-flex flex-row">
+						<div class="p-0"><img src="/images/vidulum.png" alt="VDL" class="coin-logo" /></div>
+						<div class="px-2 pt-1">Vidulum (200_9 original Equihash)</div>
+						<div class="ml-auto align-self-center"><i class="loaderVDL fa fa-sync-alt fa-spin"></i></div>
+					</div>
+					</a>
+				</div>
+				<div class="card-body">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateVDL">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueVDL">0</span> <span id="statsLuckTypeVDL">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksVDL">0</span> Blocks found</div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-primary">0%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersVDL">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersVDL">0</span> Workers</div>
+
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsVDL">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffVDL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a href="https://explorer.vidulum.app/" target="_blank"><span id="statsNetworkBlocksVDL">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsVDL">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsVDL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionVDL">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionVDL">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-VDL my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketVDLPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketVDLPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="VDLbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="VDLbtc1h">?</span>%</td>
+								<td class="text-success"><i id="VDLbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="VDLbtc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketVDLVolumeUSD">0.00</span> (<span id="statsMarketVDLVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a href="https://vidulum.equihub.pro">Let's mine some Vidulum</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
 		<div class="col-xl-4 col-lg-12 d-none">
 			<div class="card mb-4 shadow">
 				<div class="card-header">

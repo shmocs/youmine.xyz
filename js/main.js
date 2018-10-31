@@ -73,6 +73,7 @@ getMarketStats(3029); //ZEL
 //getMarketStats(9999); //ZERC
 //getMarketStats(9999); //BZE
 //getMarketStats(9999); //SAFE
+//getMarketStats(9999); //VDL
 
 
 function getStats(coin) {
@@ -89,6 +90,8 @@ function getStats(coin) {
 		pool = 'bzedge';
 	} else if (coin == 'SAFE') {
 		pool = 'safecoin';
+	} else if (coin == 'VDL') {
+		pool = 'vidulum';
 	} else {
 		pool = coin.toLowerCase();
 	}
@@ -160,3 +163,4 @@ getStats('ZEL');
 getStats('ZERC');
 getStats('BZE');
 getStats('SAFE');
+getStats('VDL');
