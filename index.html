@@ -30,7 +30,24 @@
 	<link rel="stylesheet" href="/css/Poppins_300_400.css">
 	<link rel="stylesheet" href="/css/FontAwesome_all.css">
 	
-	<link rel="stylesheet" href="/css/style.css?v=1">
+	
+	<noscript><link rel="stylesheet" id="theme_css" href="/css/style.css?v=1"></noscript>
+	
+	
+	<script>
+		var theme = 'style';
+		
+		if (localStorage.getItem("theme")) {
+			// Restore the saved theme
+			theme = localStorage.getItem("theme");
+		}
+		document.write('<link rel="stylesheet" id="theme_css" href="/css/'+theme+'.css?v=1">');
+
+		console.log(theme);
+
+		//localStorage.setItem("theme", 'style_night');
+		//localStorage.setItem("theme", 'style');
+	</script>
 	
 </head>
 <body>
@@ -68,8 +85,17 @@
 			</li>
 			<li class="nav-item"><a class="nav-link" target="_blank" href="https://discord.gg/CkbPGxs"><i class="fab fa-discord"></i> Discord</a> </li>
 			<li class="nav-item"><a class="nav-link" target="_blank" href="https://t.me/joinchat/HibSyRDCTXgw2yB30iKsJQ"><i class="fab fa-telegram-plane"></i> Telegram</a></li>
+
+			<li class="nav-item pl-4">
+				<label class="theme_switch" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Switch Night/Day theme">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				</label>
+			</li>
+			
 		</ul>
 	</div>
+	
 </nav>
 
 

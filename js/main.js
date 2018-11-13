@@ -2,6 +2,21 @@
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
 
+	var theme_chk = $('.theme_switch > input');
+	if (theme == 'style_night') {
+		theme_chk.prop('checked', true);
+	}
+
+	theme_chk.on('change', function () {
+		//console.log($(this).is(':checked'));
+
+		localStorage.setItem("theme", $(this).is(':checked') ? 'style_night':'style');
+
+		setTimeout(function () {
+			window.location.href = window.location.href;
+		}, 500);
+	});
+
 });
 
 $(document).click(function (event) {
