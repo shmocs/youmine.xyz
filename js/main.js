@@ -83,12 +83,16 @@ function getMarketStats(ticker) {
 		}
 	});
 }
+getMarketStats(2083); //BTG
+getMarketStats(1698); //ZEN
+getMarketStats(1447); //ZCL
 getMarketStats(2912); //XSG
-getMarketStats(3029); //ZEL
-//getMarketStats(9999); //ZERC
-//getMarketStats(9999); //BZE
-//getMarketStats(9999); //SAFE
 //getMarketStats(9999); //VDL
+//getMarketStats(9999); //BZE
+//getMarketStats(9999); //BZC
+//getMarketStats(9999); //ZERC
+getMarketStats(3029); //ZEL
+//getMarketStats(9999); //SAFE
 
 
 function getStats(coin) {
@@ -179,3 +183,7 @@ getStats('ZERC');
 getStats('BZE');
 getStats('SAFE');
 getStats('VDL');
+getStats('BZC');
+getStats('BTG');
+getStats('ZEN');
+getStats('ZCL');

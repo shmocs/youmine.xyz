@@ -40,6 +40,22 @@ body {
 	max-height: 30px;
 }
 
+.card {
+	border: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	border-bottom: 2px solid #267db5;
+}
+.card-header {
+	background-color: #267db5;
+	color: #f5f5f5;
+}
+.card-header:first-child {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
 
 .boxStatsList i.fa, .boxStatsList i.fas, .boxStatsList i.fab {
 	height: 15px;
@@ -48,6 +64,24 @@ body {
 }
 .why-mine-us span {
 	margin-right: 10px;
+}
+
+.btn-info, .bg-info {
+	color: #fff;
+	background-color: #267db5 !important;
+	border-color: #267db5;
+}
+.btn-info:hover, .btn-info:active, .btn-info.active {
+	background-color: #156ca4 !important;
+	border-color: #156ca4;
+}
+.btn-info-light {
+	background-color: #2b87c3 !important;
+}
+
+.bg-orange {
+	background-color: #ff6600 !important;
+	opacity: 0.7;
 }
 
 
