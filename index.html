@@ -30,7 +30,24 @@
 	<link rel="stylesheet" href="/css/Poppins_300_400.css">
 	<link rel="stylesheet" href="/css/FontAwesome_all.css">
 	
-	<link rel="stylesheet" href="/css/style.css?v=1">
+	
+	<noscript><link rel="stylesheet" id="theme_css" href="/css/style.css?v=1"></noscript>
+	
+	
+	<script>
+		var theme = 'style';
+		
+		if (localStorage.getItem("theme")) {
+			// Restore the saved theme
+			theme = localStorage.getItem("theme");
+		}
+		document.write('<link rel="stylesheet" id="theme_css" href="/css/'+theme+'.css?v=1">');
+
+		console.log(theme);
+
+		//localStorage.setItem("theme", 'style_night');
+		//localStorage.setItem("theme", 'style');
+	</script>
 	
 </head>
 <body>
@@ -50,12 +67,16 @@
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle navbarDropdownMenuLink" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-coins"></i> Coins</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="https://btg.equihub.pro"><img src="/images/bitcoingold.png" class="coin-logo" /> Bitcoin Gold</a>
+					<a class="dropdown-item" href="https://zen.equihub.pro"><img src="/images/horizen.png" class="coin-logo" /> Horizen</a>
 					<a class="dropdown-item" href="https://snowgem.equihub.pro"><img src="/images/snowgem.png" class="coin-logo" /> SnowGem</a>
-					<a class="dropdown-item" href="https://zelcash.equihub.pro"><img src="/images/zelcash.png" class="coin-logo" /> ZelCash</a>
-					<a class="dropdown-item" href="https://zeroclassic.equihub.pro"><img src="/images/zeroclassic.png" class="coin-logo" /> ZeroClassic</a>
-					<a class="dropdown-item" href="https://bzedge.equihub.pro"><img src="/images/bzedge.png" class="coin-logo" /> BZEdge</a>
-					<a class="dropdown-item" href="https://safecoin.equihub.pro"><img src="/images/safecoin.png" class="coin-logo" /> SafeCoin</a>
+					<a class="dropdown-item" href="https://zcl.equihub.pro"><img src="/images/zclassic.png" class="coin-logo" /> ZClassic</a>
 					<a class="dropdown-item" href="https://vidulum.equihub.pro"><img src="/images/vidulum.png" class="coin-logo" /> Vidulum</a>
+					<a class="dropdown-item" href="https://bzedge.equihub.pro"><img src="/images/bzedge.png" class="coin-logo" /> BZEdge</a>
+					<a class="dropdown-item" href="https://bzc.equihub.pro"><img src="/images/bitzec.png" class="coin-logo" /> BitZec</a>
+					<a class="dropdown-item" href="https://zeroclassic.equihub.pro"><img src="/images/zeroclassic.png" class="coin-logo" /> ZeroClassic</a>
+					<a class="dropdown-item" href="https://zelcash.equihub.pro"><img src="/images/zelcash.png" class="coin-logo" /> ZelCash</a>
+					<a class="dropdown-item" href="https://safecoin.equihub.pro"><img src="/images/safecoin.png" class="coin-logo" /> SafeCoin</a>
 				</div>
 			</li>
 			<li class="nav-item dropdown">
@@ -68,8 +89,17 @@
 			</li>
 			<li class="nav-item"><a class="nav-link" target="_blank" href="https://discord.gg/CkbPGxs"><i class="fab fa-discord"></i> Discord</a> </li>
 			<li class="nav-item"><a class="nav-link" target="_blank" href="https://t.me/joinchat/HibSyRDCTXgw2yB30iKsJQ"><i class="fab fa-telegram-plane"></i> Telegram</a></li>
+
+			<li class="nav-item pl-4">
+				<label class="theme_switch" data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="Switch Night/Day theme">
+					<input type="checkbox">
+					<span class="slider round"></span>
+				</label>
+			</li>
+			
 		</ul>
 	</div>
+	
 </nav>
 
 
@@ -101,7 +131,166 @@
 		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 shadow">
 				<div class="card-header">
-					<a href="https://snowgem.equihub.pro" class="text-secondary">
+					<a href="https://btg.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/bitcoingold.png" alt="BTG" class="coin-logo" /></div>
+							<div class="px-2 pt-1">Bitcoin Gold (144_5)</div>
+							<div class="ml-auto align-self-center"><i class="loaderBTG fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateBTG">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueBTG">0</span> <span id="statsLuckTypeBTG">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksBTG">0</span> Blocks found</div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersBTG">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersBTG">0</span> Workers</div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsBTG">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffBTG">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.bitcoingold.org/insight/" target="_blank"><span id="statsNetworkBlocksBTG">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsBTG">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsBTG">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionBTG">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionBTG">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-BTG my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketBTGPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketBTGPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="BTGbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="BTGbtc1h">?</span>%</td>
+								<td class="text-success"><i id="BTGbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="BTGbtc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketBTGVolumeUSD">0.00</span> (<span id="statsMarketBTGVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://btg.equihub.pro">Let's mine some Bitcoin Gold</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
+					<a href="https://zen.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/horizen.png" alt="ZEN" class="coin-logo" /></div>
+							<div class="px-2 pt-1">Horizen (200_9)</div>
+							<div class="ml-auto align-self-center"><i class="loaderZEN fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateZEN">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueZEN">0</span> <span id="statsLuckTypeZEN">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksZEN">0</span> Blocks found</div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersZEN">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersZEN">0</span> Workers</div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsZEN">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffZEN">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.zen-solutions.io/" target="_blank"><span id="statsNetworkBlocksZEN">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsZEN">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsZEN">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionZEN">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionZEN">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-ZEN my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketZENPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketZENPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="ZENbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="ZENbtc1h">?</span>%</td>
+								<td class="text-success"><i id="ZENbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="ZENbtc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketZENVolumeUSD">0.00</span> (<span id="statsMarketZENVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://zen.equihub.pro">Let's mine some Horizen</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
+					<a href="https://snowgem.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
 						<div class="p-0"><img src="/images/snowgem.png" alt="XSG" class="coin-logo" /></div>
 						<div class="px-2 pt-1">SnowGem (144_5)</div>
@@ -149,7 +338,7 @@
 					
 					<div class="stats-progress stats-progress-XSG my-2">
 						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
 					
@@ -179,15 +368,17 @@
 			</div>
 		</div>
 		
+		
+		
 		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 shadow">
 				<div class="card-header">
-					<a href="https://zelcash.equihub.pro" class="text-secondary">
-					<div class="d-flex flex-row">
-						<div class="p-0"><img src="/images/zelcash.png" alt="ZEL" class="coin-logo" /></div>
-						<div class="px-2 pt-1">ZelCash (144_5)</div>
-						<div class="ml-auto align-self-center"><i class="loaderZEL fa fa-sync-alt fa-spin"></i></div>
-					</div>
+					<a href="https://zcl.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/zclassic.png" alt="ZCL" class="coin-logo" /></div>
+							<div class="px-2 pt-1">ZClassic (200_9)</div>
+							<div class="ml-auto align-self-center"><i class="loaderZCL fa fa-sync-alt fa-spin"></i></div>
+						</div>
 					</a>
 				</div>
 				<div class="card-body text-muted">
@@ -195,40 +386,39 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateZEL">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateZCL">0.00 Sol/s</span> (Now)</div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueZEL">0</span> <span id="statsLuckTypeZEL">hours</span>
-								
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueZCL">0</span> <span id="statsLuckTypeZCL">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocksZEL">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksZCL">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMinersZEL">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkersZEL">0</span> Workers</div>
-
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersZCL">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersZCL">0</span> Workers</div>
+						
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
 							<div class=""><u>Network stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsZEL">0.00 KSol/s</span></div>
-							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffZEL">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsZCL">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffZCL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
-								<a class="text-info" href="https://explorer.zel.cash/" target="_blank"><span id="statsNetworkBlocksZEL">0</span></a>
+								<a class="text-info" href="http://explorer.zclmine.pro/" target="_blank"><span id="statsNetworkBlocksZCL">0</span></a>
 							</div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
-								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsZEL">100</span>
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsZCL">100</span>
 							</div>
-							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsZEL">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionZEL">
-								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionZEL">//</span></small>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsZCL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionZCL">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionZCL">//</span></small>
 							</div>
 						</div>
 					</div>
 					
-					<div class="stats-progress stats-progress-ZEL my-2">
+					<div class="stats-progress stats-progress-ZCL my-2">
 						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
 					
@@ -236,15 +426,15 @@
 						<table class="table table-bordered table-sm text-center">
 							<tbody>
 							<tr>
-								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketZELPriceUSD">0.00</span></td>
-								<td><i class="fab fa-bitcoin"></i><span id="statsMarketZELPriceBTC">0.00000000</span></td>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketZCLPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketZCLPriceBTC">-</span></td>
 							</tr>
 							<tr>
-								<td class="text-success"><i id="ZELbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="ZELbtc1h">0.00</span>%</td>
-								<td class="text-success"><i id="ZELbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="ZELbtc24h">0.00</span>%</td>
+								<td class="text-success"><i id="ZCLbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="ZCLbtc1h">?</span>%</td>
+								<td class="text-success"><i id="ZCLbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="ZCLbtc24h">?</span>%</td>
 							</tr>
 							<tr>
-								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketZELVolumeUSD">0.00</span> (<span id="statsMarketZELVolumeBTC">0.00</span> BTC)</td>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketZCLVolumeUSD">0.00</span> (<span id="statsMarketZCLVolumeBTC">0</span> BTC)</td>
 							</tr>
 							</tbody>
 						</table>
@@ -252,16 +442,258 @@
 					
 					
 					<div align="center">
-						<i class="fa fa-bomb"></i> <a class="text-info" href="https://zelcash.equihub.pro">Let's mine some ZelCash</a>
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://zcl.equihub.pro">Let's mine some ZClassic</a>
 					</div>
 				</div>
 			</div>
 		</div>
 		
+		
+		
 		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 shadow">
 				<div class="card-header">
-					<a href="https://zeroclassic.equihub.pro" class="text-secondary">
+					<a href="https://vidulum.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/vidulum.png" alt="VDL" class="coin-logo" /></div>
+							<div class="px-2 pt-1">Vidulum (200_9)</div>
+							<div class="ml-auto align-self-center"><i class="loaderVDL fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateVDL">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueVDL">0</span> <span id="statsLuckTypeVDL">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksVDL">0</span> Blocks found</div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersVDL">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersVDL">0</span> Workers</div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsVDL">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffVDL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.vidulum.app/" target="_blank"><span id="statsNetworkBlocksVDL">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsVDL">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsVDL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionVDL">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionVDL">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-VDL my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketVDLPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketVDLPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="VDLbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="VDLbtc1h">?</span>%</td>
+								<td class="text-success"><i id="VDLbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="VDLbtc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketVDLVolumeUSD">0.00</span> (<span id="statsMarketVDLVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://vidulum.equihub.pro">Let's mine some Vidulum</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
+					<a href="https://bzedge.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/bzedge.png" alt="BZE" class="coin-logo" /></div>
+							<div class="px-2 pt-1">BZEdge (144_5)</div>
+							<div class="ml-auto align-self-center"><i class="loaderBZE fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateBZE">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueBZE">0</span> <span id="statsLuckTypeBZE">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksBZE">0</span> Blocks found</div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">1%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersBZE">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersBZE">0</span> Workers</div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsBZE">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffBZE">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.bzedge.org/" target="_blank"><span id="statsNetworkBlocksBZE">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsBZE">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsBZE">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionBZE">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionBZE">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-BZE my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketBZEPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketBZEPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="BZEbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="BZEbtc1h">?</span>%</td>
+								<td class="text-success"><i id="BZEbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="BZEbtc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketBZEVolumeUSD">0.00</span> (<span id="statsMarketBZEVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://bzedge.equihub.pro">Let's mine some BZEdge</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
+					<a href="https://bzc.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/bitzec.png" alt="BZC" class="coin-logo" /></div>
+							<div class="px-2 pt-1">BitZec (200_9)</div>
+							<div class="ml-auto align-self-center"><i class="loaderBZC fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateBZC">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueBZC">0</span> <span id="statsLuckTypeBZC">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksBZC">0</span> Blocks found</div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">1%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersBZC">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersBZC">0</span> Workers</div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsBZC">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffBZC">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="http://bitzec.cf/" target="_blank"><span id="statsNetworkBlocksBZC">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsBZC">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsBZC">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionBZC">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionBZC">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-BZC my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketBZCPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketBZCPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i id="BZCbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="BZCbtc1h">?</span>%</td>
+								<td class="text-success"><i id="BZCbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="BZCbtc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketBZCVolumeUSD">0.00</span> (<span id="statsMarketBZCVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://bzc.equihub.pro">Let's mine some BitZec</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
+					<a href="https://zeroclassic.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
 						<div class="p-0"><img src="/images/zeroclassic.png" alt="ZEL" class="coin-logo" /></div>
 						<div class="px-2 pt-1">ZeroClassic (192_7)</div>
@@ -306,7 +738,7 @@
 					
 					<div class="stats-progress stats-progress-ZERC my-2">
 						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
 					
@@ -336,15 +768,16 @@
 			</div>
 		</div>
 		
+		
 		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 shadow">
 				<div class="card-header">
-					<a href="https://bzedge.equihub.pro" class="text-secondary">
-					<div class="d-flex flex-row">
-						<div class="p-0"><img src="/images/bzedge.png" alt="BZE" class="coin-logo" /></div>
-						<div class="px-2 pt-1">BZEdge (144_5)</div>
-						<div class="ml-auto align-self-center"><i class="loaderBZE fa fa-sync-alt fa-spin"></i></div>
-					</div>
+					<a href="https://zelcash.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/zelcash.png" alt="ZEL" class="coin-logo" /></div>
+							<div class="px-2 pt-1">ZelCash (144_5)</div>
+							<div class="ml-auto align-self-center"><i class="loaderZEL fa fa-sync-alt fa-spin"></i></div>
+						</div>
 					</a>
 				</div>
 				<div class="card-body text-muted">
@@ -352,39 +785,40 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateBZE">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateZEL">0.00 Sol/s</span> (Now)</div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueBZE">0</span> <span id="statsLuckTypeBZE">hours</span>
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueZEL">0</span> <span id="statsLuckTypeZEL">hours</span>
+							
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocksBZE">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocksZEL">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">1%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMinersBZE">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkersBZE">0</span> Workers</div>
-
+							<div><i class="fa fa-user-friends"></i><span id="statsMinersZEL">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkersZEL">0</span> Workers</div>
+						
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
 							<div class=""><u>Network stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsBZE">0.00 KSol/s</span></div>
-							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffBZE">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsZEL">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffZEL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
-								<a class="text-info" href="https://explorer.bzedge.org/" target="_blank"><span id="statsNetworkBlocksBZE">0</span></a>
+								<a class="text-info" href="https://explorer.zel.cash/" target="_blank"><span id="statsNetworkBlocksZEL">0</span></a>
 							</div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
-								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsBZE">100</span>
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsZEL">100</span>
 							</div>
-							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsBZE">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionBZE">
-								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionBZE">//</span></small>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsZEL">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionZEL">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionZEL">//</span></small>
 							</div>
 						</div>
 					</div>
 					
-					<div class="stats-progress stats-progress-BZE my-2">
+					<div class="stats-progress stats-progress-ZEL my-2">
 						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
 					
@@ -392,15 +826,15 @@
 						<table class="table table-bordered table-sm text-center">
 							<tbody>
 							<tr>
-								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketBZEPriceUSD">-</span></td>
-								<td><i class="fab fa-bitcoin"></i><span id="statsMarketBZEPriceBTC">-</span></td>
+								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketZELPriceUSD">0.00</span></td>
+								<td><i class="fab fa-bitcoin"></i><span id="statsMarketZELPriceBTC">0.00000000</span></td>
 							</tr>
 							<tr>
-								<td class="text-success"><i id="BZEbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="BZEbtc1h">?</span>%</td>
-								<td class="text-success"><i id="BZEbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="BZEbtc24h">?</span>%</td>
+								<td class="text-success"><i id="ZELbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="ZELbtc1h">0.00</span>%</td>
+								<td class="text-success"><i id="ZELbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="ZELbtc24h">0.00</span>%</td>
 							</tr>
 							<tr>
-								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketBZEVolumeUSD">0.00</span> (<span id="statsMarketBZEVolumeBTC">0</span> BTC)</td>
+								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketZELVolumeUSD">0.00</span> (<span id="statsMarketZELVolumeBTC">0.00</span> BTC)</td>
 							</tr>
 							</tbody>
 						</table>
@@ -408,17 +842,17 @@
 					
 					
 					<div align="center">
-						<i class="fa fa-bomb"></i> <a class="text-info" href="https://bzedge.equihub.pro">Let's mine some BZEdge</a>
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://zelcash.equihub.pro">Let's mine some ZelCash</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		
+
 		
 		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 shadow">
 				<div class="card-header">
-					<a href="https://safecoin.equihub.pro" class="text-secondary">
+					<a href="https://safecoin.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
 						<div class="p-0"><img src="/images/safecoin.png" alt="SAFE" class="coin-logo" /></div>
 						<div class="px-2 pt-1">SafeCoin (144_5)</div>
@@ -463,7 +897,7 @@
 					
 					<div class="stats-progress stats-progress-SAFE my-2">
 						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 					</div>
 					
@@ -493,84 +927,6 @@
 			</div>
 		</div>
 		
-		
-		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
-				<div class="card-header">
-					<a href="https://vidulum.equihub.pro" class="text-secondary">
-					<div class="d-flex flex-row">
-						<div class="p-0"><img src="/images/vidulum.png" alt="VDL" class="coin-logo" /></div>
-						<div class="px-2 pt-1">Vidulum (200_9 original Equihash)</div>
-						<div class="ml-auto align-self-center"><i class="loaderVDL fa fa-sync-alt fa-spin"></i></div>
-					</div>
-					</a>
-				</div>
-				<div class="card-body text-muted">
-					
-					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
-							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrateVDL">0.00 Sol/s</span> (Now)</div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValueVDL">0</span> <span id="statsLuckTypeVDL">hours</span>
-							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocksVDL">0</span> Blocks found</div>
-							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
-							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMinersVDL">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkersVDL">0</span> Workers</div>
-
-						</div>
-						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
-							<div class=""><u>Network stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSolsVDL">0.00 KSol/s</span></div>
-							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiffVDL">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
-								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
-								<a class="text-info" href="https://explorer.vidulum.app/" target="_blank"><span id="statsNetworkBlocksVDL">0</span></a>
-							</div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
-								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmationsVDL">100</span>
-							</div>
-							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnectionsVDL">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersionVDL">
-								<i class="fa fa-globe"></i><small><span id="statsNetworkVersionVDL">//</span></small>
-							</div>
-						</div>
-					</div>
-					
-					<div class="stats-progress stats-progress-VDL my-2">
-						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-striped bg-info progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					
-					<div class="table-responsive boxStatsList">
-						<table class="table table-bordered table-sm text-center">
-							<tbody>
-							<tr>
-								<td><i class="fa fa-dollar-sign"></i><span id="statsMarketVDLPriceUSD">-</span></td>
-								<td><i class="fab fa-bitcoin"></i><span id="statsMarketVDLPriceBTC">-</span></td>
-							</tr>
-							<tr>
-								<td class="text-success"><i id="VDLbtc1hArrow" class="fa fa-arrow-right"></i><small>1h:</small> <span id="VDLbtc1h">?</span>%</td>
-								<td class="text-success"><i id="VDLbtc24hArrow" class="fa fa-arrow-right"></i><small>24h:</small> <span id="VDLbtc24h">?</span>%</td>
-							</tr>
-							<tr>
-								<td colspan="2"><small>24h volume:</small> $<span id="statsMarketVDLVolumeUSD">0.00</span> (<span id="statsMarketVDLVolumeBTC">0</span> BTC)</td>
-							</tr>
-							</tbody>
-						</table>
-					</div>
-					
-					
-					<div align="center">
-						<i class="fa fa-bomb"></i> <a class="text-info" href="https://vidulum.equihub.pro">Let's mine some Vidulum</a>
-					</div>
-				</div>
-			</div>
-		</div>
 		
 		<div class="col-xl-4 col-lg-12 d-none">
 			<div class="card mb-4 shadow">
