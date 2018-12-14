@@ -39,31 +39,31 @@ function getMarketStats(ticker) {
 			var btc = cmc_json.data.quotes.BTC;
 			var symbol = cmc_json.data.symbol;
 
-			$('#statsMarket'+symbol+'PriceUSD').text(usd.price.toFixed(2));
-			$('#statsMarket'+symbol+'PriceBTC').text(btc.price.toFixed(8));
+			$('.'+symbol+'-statsMarketPriceUSD').text(usd.price.toFixed(2));
+			$('.'+symbol+'-statsMarketPriceBTC').text(btc.price.toFixed(8));
 
-			$('#'+symbol+'btc1h').text(btc.percent_change_1h);
-			$('#'+symbol+'btc24h').text(btc.percent_change_24h);
+			$('.'+symbol+'-btc1h').text(btc.percent_change_1h);
+			$('.'+symbol+'-btc24h').text(btc.percent_change_24h);
 
 			if (btc.percent_change_1h != 0)
 			if (btc.percent_change_1h < 0) {
-				$('#'+symbol+'btc1hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-up').addClass('fa-arrow-down');
-				$('#'+symbol+'btc1hArrow').parent().removeClass('text-success').addClass('text-danger');
+				$('.'+symbol+'-btc1hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-up').addClass('fa-arrow-down');
+				$('.'+symbol+'-btc1hArrow').parent().removeClass('text-success').addClass('text-danger');
 			} else {
-				$('#'+symbol+'btc1hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-down').addClass('fa-arrow-up');
+				$('.'+symbol+'-btc1hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-down').addClass('fa-arrow-up');
 			}
 
 
 			if (btc.percent_change_24h != 0)
 			if (btc.percent_change_24h < 0) {
-				$('#'+symbol+'btc24hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-up').addClass('fa-arrow-down');
-				$('#'+symbol+'btc24hArrow').parent().removeClass('text-success').addClass('text-danger');
+				$('.'+symbol+'-btc24hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-up').addClass('fa-arrow-down');
+				$('.'+symbol+'-btc24hArrow').parent().removeClass('text-success').addClass('text-danger');
 			} else {
-				$('#'+symbol+'btc24hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-down').addClass('fa-arrow-up');
+				$('.'+symbol+'-btc24hArrow').removeClass('fa-arrow-right').removeClass('fa-arrow-down').addClass('fa-arrow-up');
 			}
 
-			$('#statsMarket'+symbol+'VolumeUSD').text(usd.volume_24h.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-			$('#statsMarket'+symbol+'VolumeBTC').text(btc.volume_24h.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+			$('.'+symbol+'-statsMarketVolumeUSD').text(usd.volume_24h.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
+			$('.'+symbol+'-statsMarketVolumeBTC').text(btc.volume_24h.toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
 
 		}
 	});
@@ -82,34 +82,31 @@ getMarketStats(3029); //ZEL
 
 function getStats(coin) {
 
-	$('.loader'+coin).addClass('fa-spin').show();
-
-	if (coin == 'XSG') {
-		pool = 'snowgem';
-	} else if (coin == 'ZEL') {
-		pool = 'zelcash';
-	} else if (coin == 'ZERC') {
-		pool = 'zeroclassic';
-	} else if (coin == 'BZE') {
-		pool = 'bzedge';
-	} else if (coin == 'SAFE') {
-		pool = 'safecoin';
-	} else if (coin == 'VDL') {
-		pool = 'vidulum';
-	} else {
-		pool = coin.toLowerCase();
-	}
+	pool = coin.toLowerCase();
+	$('.loader-'+pool).addClass('fa-spin').show();
 
 	$.ajax({
 		url: 'https://'+pool+'.equihub.pro/api/stats',
 		dataType: 'json',
 		success: function(data) {
 
-			$('#statsBlocks' + data.symbol).text(data.poolStats.validBlocks);
-			$('#statsMiners' + data.symbol).text(data.minerCount);
-			$('#statsWorkers' + data.symbol).text(data.workerCount);
-			$('#statsHashrate' + data.symbol).text(data.hashrateString);
-			$('#statsLuckDays' + data.symbol).text(data.luckDays);
+			if (data.symbol == 'BZC'
+				|| data.symbol == 'BTG'
+				|| data.symbol == 'ZEN'
+				|| data.symbol == 'ZCL'
+				|| data.symbol == 'BTH'
+
+			) {
+				coin = data.symbol.toLowerCase();
+			} else {
+				coin = data.name;
+			}
+
+			$('#statsBlocks-' + coin).text(data.poolStats.validBlocks);
+			$('#statsMiners-' + coin).text(data.minerCount);
+			$('#statsWorkers-' + coin).text(data.workerCount);
+			$('#statsHashrate-' + coin).text(data.hashrateString);
+			$('#statsLuckDays-' + coin).text(data.luckDays);
 
 
 			var luckType = 'hours';
@@ -122,27 +119,31 @@ function getStats(coin) {
 				luckValue = parseFloat(luckValue).toFixed(1);
 			}
 
-			$('#statsLuckValue' + data.symbol).text(luckValue);
-			$('#statsLuckType' + data.symbol).text(luckType);
+			$('#statsLuckValue-' + coin).text(luckValue);
+			$('#statsLuckType-' + coin).text(luckType);
 
-			$('#statsNetworkSols' + data.symbol).text(data.poolStats.networkSolsString);
-			$('#statsNetworkDiff' + data.symbol).text(parseFloat(data.poolStats.networkDiff).toFixed(2));
-			$('#statsNetworkBlocks' + data.symbol).text(data.poolStats.networkBlocks);
-			$('#statsNetworkConnections' + data.symbol).text(data.poolStats.networkConnections);
-			$('#statsNetworkVersion' + data.symbol).text(data.poolStats.networkVersion);
-			$('#statsNetworkProtocolVersion' + data.symbol).attr('data-original-title', data.poolStats.networkProtocolVersion);
+			$('#statsNetworkSols-' + coin).text(data.poolStats.networkSolsString);
+			$('#statsNetworkDiff-' + coin).text(parseFloat(data.poolStats.networkDiff).toFixed(2));
+			$('#statsNetworkBlocks-' + coin).text(data.poolStats.networkBlocks);
+			$('#statsNetworkConnections-' + coin).text(data.poolStats.networkConnections);
+			$('#statsNetworkVersion-' + coin).text(data.poolStats.networkVersion);
+			$('#statsNetworkProtocolVersion-' + coin).attr('data-original-title', data.poolStats.networkProtocolVersion);
 
 			//console.log(data.symbol);
+			//console.log(data.name);
+			//console.log(coin);
+			//console.log(pool);
 			//console.log(data.poolStats);
 
+
 			setTimeout(function (args) {
-				$('.loader'+data.symbol).removeClass('fa-spin').hide()
+				$('.loader-'+coin).removeClass('fa-spin').hide()
 			}, 500);
 
-			$('.stats-progress-'+data.symbol+' .progress-bar').addClass('progress-bar-animated').addClass('progress-bar-striped');
+			$('.stats-progress-'+coin+' .progress-bar').addClass('progress-bar-animated').addClass('progress-bar-striped');
 
 			setTimeout(function (args) {
-				restartTimer(data.symbol);
+				restartTimer(coin);
 			}, 1000);
 		},
 		error: function() {
@@ -162,13 +163,14 @@ function restartTimer(coin) {
 		});
 }
 
-getStats('XSG');
-getStats('ZEL');
-getStats('ZERC');
-getStats('BZE');
-getStats('SAFE');
-getStats('VDL');
-getStats('BZC');
-getStats('BTG');
-getStats('ZEN');
-getStats('ZCL');
+getStats('snowgem');
+getStats('solo-xsg');
+getStats('zelcash');
+getStats('zeroclassic');
+getStats('bzedge');
+getStats('safecoin');
+getStats('vidulum');
+getStats('bzc');
+getStats('btg');
+getStats('zen');
+getStats('zcl');
