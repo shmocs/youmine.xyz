@@ -78,6 +78,7 @@ getMarketStats(2912); //XSG
 //getMarketStats(9999); //ZERC
 getMarketStats(3029); //ZEL
 //getMarketStats(9999); //SAFE
+//getMarketStats(9999); //BTH
 
 
 function getStats(coin) {
@@ -174,3 +175,4 @@ getStats('bzc');
 getStats('btg');
 getStats('zen');
 getStats('zcl');
+getStats('bth');
