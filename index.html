@@ -158,7 +158,7 @@
 								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">1%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-bth">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-bth">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-bth">0</span> Workers</div>
@@ -218,6 +218,88 @@
 		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 shadow">
 				<div class="card-header">
+					<a href="https://bth.equihub.pro" class="text-white">
+					<div class="d-flex flex-row">
+						<div class="p-0"><img src="/images/bithereum.png" alt="BTH" class="coin-logo" /></div>
+						<div class="px-2 pt-1">Bithereum SOLO (144_5)</div>
+						<div class="ml-auto align-self-center"><i class="loader-solo-bth fa fa-sync-alt fa-spin"></i></div>
+					</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-solo-bth">0.00 Sol/s</span> (Now)</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-solo-bth">0</span> <span id="statsLuckType-solo-bth">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><span id="statsBlocks-solo-bth">0</span> Blocks found</div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-solo-bth">%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><span id="statsMiners-solo-bth">0</span> Miners</div>
+							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-solo-bth">0</span> Workers</div>
+
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-bth">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-bth">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 10m. Every ~600 seconds a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.bithereum.network/" target="_blank"><span id="statsNetworkBlocks-solo-bth">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmations-solo-bth">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnections-solo-bth">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersion-solo-bth">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersion-solo-bth">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-solo-bth my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span class="BTH-statsMarketPriceUSD">0.00</span></td>
+								<td><i class="fab fa-bitcoin"></i><span class="BTH-statsMarketPriceBTC">0.00000000</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i class="BTH-btc1hArrow fa fa-arrow-right"></i><small>1h:</small> <span class="BTH-btc1h">0.00</span>%</td>
+								<td class="text-success"><i class="BTH-btc24hArrow fa fa-arrow-right"></i><small>24h:</small> <span class="BTH-btc24h">0.00</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span class="BTH-statsMarketVolumeUSD">0.00</span> (<span class="BTH-statsMarketVolumeBTC">0.00</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://solo-bth.equihub.pro">Let's mine some Bithereum</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 shadow">
+				<div class="card-header">
 					<a href="https://snowgem.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
 						<div class="p-0"><img src="/images/snowgem.png" alt="XSG" class="coin-logo" /></div>
@@ -240,7 +322,7 @@
 								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-snowgem">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-snowgem">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-snowgem">0</span> Workers</div>
@@ -321,7 +403,7 @@
 								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">1%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-solo-xsg">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-solo-xsg">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-solo-xsg">0</span> Workers</div>
@@ -399,7 +481,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-vidulum">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">1%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-vidulum">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-vidulum">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-vidulum">0</span> Workers</div>
@@ -479,7 +561,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-bzedge">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">1%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-bzedge">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-bzedge">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-bzedge">0</span> Workers</div>
@@ -559,7 +641,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-bzc">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">2%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-bzc">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-bzc">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-bzc">0</span> Workers</div>
@@ -639,7 +721,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zeroclassic">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zeroclassic">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zeroclassic">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zeroclassic">0</span> Workers</div>
@@ -719,7 +801,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zelcash">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zelcash">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zelcash">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zelcash">0</span> Workers</div>
@@ -798,7 +880,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-safecoin">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.5%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-safecoin">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-safecoin">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-safecoin">0</span> Workers</div>
@@ -878,7 +960,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-btg">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-btg">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-btg">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-btg">0</span> Workers</div>
@@ -957,7 +1039,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zen">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zen">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zen">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zen">0</span> Workers</div>
@@ -1036,7 +1118,7 @@
 							</div>
 							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zcl">0</span> Blocks found</div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0%</span>
+								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zcl">%</span>
 							</div>
 							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zcl">0</span> Miners</div>
 							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zcl">0</span> Workers</div>
