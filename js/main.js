@@ -106,11 +106,11 @@ function getStats(coin) {
 		dataType: 'json',
 		success: function(data) {
 
-			if (data.symbol == 'BZC'
+			if ((data.symbol == 'BZC'
 				|| data.symbol == 'BTG'
 				|| data.symbol == 'ZEN'
 				|| data.symbol == 'ZCL'
-				|| data.symbol == 'BTH'
+				|| data.symbol == 'BTH') && data.name != 'solo-bth'
 
 			) {
 				coin = data.symbol.toLowerCase();
@@ -118,6 +118,7 @@ function getStats(coin) {
 				coin = data.name;
 			}
 
+			$('#poolFee-' + coin).text(data.poolFee);
 			$('#statsBlocks-' + coin).text(data.poolStats.validBlocks);
 			$('#statsMiners-' + coin).text(data.minerCount);
 			$('#statsWorkers-' + coin).text(data.workerCount);
@@ -191,3 +192,4 @@ getStats('btg');
 getStats('zen');
 getStats('zcl');
 getStats('bth');
+getStats('solo-bth');
