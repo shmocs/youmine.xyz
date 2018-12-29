@@ -1,0 +1,194 @@
+body {
+	font-family: "Poppins", sans-serif;
+
+	background-color: #2F3136;
+	color: #dcddde;
+}
+
+@media screen and (max-width: 600px) {
+	.logo {
+		height: 80px;
+	}
+}
+@media screen and (max-width: 480px) {
+	.logo {
+		height: 60px;
+	}
+}
+@media screen and (max-width: 576px) {
+	.pool-stats {
+		border: 0 !important;
+		padding-bottom: 10px;
+	}
+}
+
+.bg-light {
+	background-color: #36393F !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #aaaaaa;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+	color: #B9BBBE;
+}
+
+.why-mine-us .text-primary,
+.why-mine-us .text-info,
+.why-mine-us .text-success,
+.why-mine-us .text-warning,
+.why-mine-us .text-danger,
+.why-mine-us .text-secondary,
+.why-mine-us .text-muted,
+.text-muted {
+	color: #B9BBBE !important;
+}
+
+.text-info, .text-info:hover, a.text-info:hover {
+	color: #267db5 !important;
+}
+.alert-success {
+	color: #aaaaaa;
+	background-color: #444444;
+	border-color: #36393F;
+}
+
+
+
+
+/* youmine code */
+.ym-code {
+	width: auto;
+	background-color: #fff;
+	padding: 8px 12px;
+	border-left: 4px solid #17a2b8;
+	word-wrap: break-word;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+.ym-code, .ym-codespan {
+	font-family: Consolas, "courier new";
+	font-size: 16px;
+}
+
+.coin-logo {
+	max-height: 30px;
+}
+
+
+
+.card {
+	border: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	/*border-bottom: 2px solid #267db5;*/
+}
+.card-header {
+	/*background-color: #267db5;*/
+	background-color: #474a4F;
+	color: #7289D9;
+	border-bottom: 1px solid #267db5;
+}
+.card-header:first-child {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.card-body {
+	background-color: #36393F;
+}
+
+
+.boxStatsList i.fa, .boxStatsList i.fas, .boxStatsList i.fab {
+	height: 15px;
+	width: 33px;
+	text-align: center;
+}
+.why-mine-us span {
+	margin-right: 10px;
+}
+
+
+.bg-orange {
+	background-color: #267db5 !important;
+	opacity: 0.7;
+}
+
+.progress.active .progress-bar {
+	-webkit-transition: none !important;
+	transition: none !important;
+}
+.stats-progress .progress {
+	height: 0.4rem;
+	background-color: #444444;
+}
+
+.table-bordered td, .table-bordered th {
+	border: 1px solid #666666;
+}
+
+
+
+/* The switch - the box around the slider */
+.theme_switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+	margin-right: 5px;
+	text-align: right;
+	margin-bottom: 0px;
+}
+/* Hide default HTML checkbox */
+.theme_switch input {display:none;}
+.lock_message {width: 400px; height: 35px; font-size: 20px; margin-right: 5px;}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: #ff6600;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #ff6600;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
