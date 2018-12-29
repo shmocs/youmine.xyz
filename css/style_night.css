@@ -1,11 +1,9 @@
 body {
 	font-family: "Poppins", sans-serif;
-	background-color: #36393f;
-	background-color: #2f3136;
-	color: #72767d;
+
+	background-color: #2F3136;
 	color: #dcddde;
 }
-
 
 @media screen and (max-width: 600px) {
 	.logo {
@@ -23,6 +21,40 @@ body {
 		padding-bottom: 10px;
 	}
 }
+
+.bg-light {
+	background-color: #36393F !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+	color: #aaaaaa;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+	color: #B9BBBE;
+}
+
+.why-mine-us .text-primary,
+.why-mine-us .text-info,
+.why-mine-us .text-success,
+.why-mine-us .text-warning,
+.why-mine-us .text-danger,
+.why-mine-us .text-secondary,
+.why-mine-us .text-muted,
+.text-muted {
+	color: #B9BBBE !important;
+}
+
+.text-info, .text-info:hover, a.text-info:hover {
+	color: #267db5 !important;
+}
+.alert-success {
+	color: #aaaaaa;
+	background-color: #444444;
+	border-color: #36393F;
+}
+
+
+
 
 /* youmine code */
 .ym-code {
@@ -45,6 +77,30 @@ body {
 }
 
 
+
+.card {
+	border: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	/*border-bottom: 2px solid #267db5;*/
+}
+.card-header {
+	/*background-color: #267db5;*/
+	background-color: #474a4F;
+	color: #7289D9;
+	border-bottom: 1px solid #267db5;
+}
+.card-header:first-child {
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+}
+.card-body {
+	background-color: #36393F;
+}
+
+
 .boxStatsList i.fa, .boxStatsList i.fas, .boxStatsList i.fab {
 	height: 15px;
 	width: 33px;
@@ -55,12 +111,22 @@ body {
 }
 
 
+.bg-orange {
+	background-color: #267db5 !important;
+	opacity: 0.7;
+}
+
 .progress.active .progress-bar {
 	-webkit-transition: none !important;
 	transition: none !important;
 }
 .stats-progress .progress {
 	height: 0.4rem;
+	background-color: #444444;
+}
+
+.table-bordered td, .table-bordered th {
+	border: 1px solid #666666;
 }
 
 

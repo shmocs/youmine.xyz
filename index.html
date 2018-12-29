@@ -68,6 +68,7 @@
 				<a class="nav-link dropdown-toggle navbarDropdownMenuLink" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-coins"></i> Coins</a>
 				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 					<a class="dropdown-item" href="https://bth.equihub.pro"><img src="/images/bithereum.png" class="coin-logo" /> Bithereum</a>
+					<a class="dropdown-item" href="https://solo-bth.equihub.pro"><img src="/images/bithereum.png" class="coin-logo" /> Bithereum SOLO</a>
 					<a class="dropdown-item" href="https://snowgem.equihub.pro"><img src="/images/snowgem.png" class="coin-logo" /> SnowGem</a>
 					<a class="dropdown-item" href="https://solo-xsg.equihub.pro"><img src="/images/snowgem.png" class="coin-logo" /> SnowGem SOLO</a>
 					<a class="dropdown-item" href="https://vidulum.equihub.pro"><img src="/images/vidulum.png" class="coin-logo" /> Vidulum</a>
@@ -107,10 +108,10 @@
 
 <div class="container-fluid">
 
-	<div class="shadow p-4 mb-4 bg-white why-mine-us">
+	<div class="shadow p-4 mb-4 why-mine-us">
 		<span>Why <code>mine</code> with us?</span><br>
 		<span class="text-primary linkborder"><i class="fa fa-thumbs-up"></i><small> Low fees</small></span>
-		<a href="javascript:void(0)" class="linkborder"><span data-toggle="tooltip" data-placement="top" data-original-title="EU - Germany" class="text-success linkborder"><i class="fa fa-server"></i><small> Dedicated server</small></span></a>
+		<a href="javascript:void(0)" class="linkborder"><span data-toggle="tooltip" data-placement="top" data-original-title="EU - Germany, EU - France, US - New York, ASIA - Singapore" class="text-success linkborder"><i class="fa fa-server"></i><small> Dedicated servers</small></span></a>
 		<span class="text-info"><i class="fab fa-amazon-pay"></i><small> Low payout</small></span>
 		<span class="text-warning"><i class="fa fa-signal"></i><small> VarDiff enabled mining</small></span>
 		<span class="text-danger"><i class="fa fa-user-shield"></i><small> TLS Stratum</small></span>
@@ -124,8 +125,7 @@
 	<div class="alert alert-success alert-dismissible">
 		<strong>EquiHub.pro</strong> team is happy to announce the launch of <b>Bithereum - BTH</b> (BTC + ETH spork) pool. Equihash 144_5.
 		<br>
-		Dear miners, prepare your GPUs for Dec. 28th - Bitcoin block 555,555.
-		
+		Dear miners, prepare your GPUs and stay tuned for their mainnet release.
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>
@@ -134,7 +134,7 @@
 	<div class="row">
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://bth.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
@@ -149,19 +149,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-bth">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-bth">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-bth">0</span> <span id="statsLuckType-bth">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-bth">0</span> <span id="statsLuckType-bth">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-bth">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-bth">0</span></div>
 							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
 								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-bth">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-bth">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-bth">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-bth">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-bth">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-bth">0</span></div>
 
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -207,7 +207,7 @@
 					</div>
 					
 					
-					<div align="center">
+					<div align="center" class="lets-mine">
 						<i class="fa fa-bomb"></i> <a class="text-info" href="https://bth.equihub.pro">Let's mine some Bithereum</a>
 					</div>
 				</div>
@@ -216,7 +216,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://bth.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
@@ -231,20 +231,20 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-solo-bth">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-solo-bth">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-solo-bth">0</span> <span id="statsLuckType-solo-bth">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-bth">0</span> <span id="statsLuckType-solo-bth">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-solo-bth">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-bth">0</span></div>
 							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-solo-bth">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-bth">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-solo-bth">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-solo-bth">0</span> Workers</div>
-
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-solo-bth">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-solo-bth">0</span></div>
+							
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
 							<div class=""><u>Network stats</u></div>
@@ -298,7 +298,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://snowgem.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
@@ -313,19 +313,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-snowgem">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-snowgem">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-snowgem">0</span> <span id="statsLuckType-snowgem">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-snowgem">0</span> <span id="statsLuckType-snowgem">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-snowgem">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-snowgem">0</span></div>
 							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-snowgem">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-snowgem">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-snowgem">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-snowgem">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-snowgem">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-snowgem">0</span></div>
 
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -379,7 +379,7 @@
 		</div>
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://solo-xsg.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
@@ -394,19 +394,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-solo-xsg">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-solo-xsg">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-solo-xsg">0</span> <span id="statsLuckType-solo-xsg">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-xsg">0</span> <span id="statsLuckType-solo-xsg">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-solo-xsg">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-xsg">0</span></div>
 							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-								<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-solo-xsg">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-xsg">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-solo-xsg">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-solo-xsg">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-solo-xsg">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-solo-xsg">0</span></div>
 
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -460,7 +460,7 @@
 		</div>
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://vidulum.equihub.pro" class="text-white">
 						<div class="d-flex flex-row">
@@ -475,16 +475,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-vidulum">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-vidulum">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-vidulum">0</span> <span id="statsLuckType-vidulum">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-vidulum">0</span> <span id="statsLuckType-vidulum">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-vidulum">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-vidulum">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-vidulum">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-vidulum">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-vidulum">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-vidulum">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-vidulum">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-vidulum">0</span></div>
 						
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -540,7 +543,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://bzedge.equihub.pro" class="text-white">
 						<div class="d-flex flex-row">
@@ -555,17 +558,20 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-bzedge">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-bzedge">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-bzedge">0</span> <span id="statsLuckType-bzedge">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-bzedge">0</span> <span id="statsLuckType-bzedge">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-bzedge">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-bzedge">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-bzedge">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-bzedge">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-bzedge">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-bzedge">0</span> Workers</div>
-						
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-bzedge">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-bzedge">0</span></div>
+							
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
 							<div class=""><u>Network stats</u></div>
@@ -620,7 +626,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://bzc.equihub.pro" class="text-white">
 						<div class="d-flex flex-row">
@@ -635,16 +641,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-bzc">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-bzc">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-bzc">0</span> <span id="statsLuckType-bzc">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-bzc">0</span> <span id="statsLuckType-bzc">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-bzc">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-bzc">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-bzc">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-bzc">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-bzc">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-bzc">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-bzc">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-bzc">0</span></div>
 						
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -700,7 +709,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://zeroclassic.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
@@ -715,17 +724,20 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-zeroclassic">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-zeroclassic">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-zeroclassic">0</span> <span id="statsLuckType-zeroclassic">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zeroclassic">0</span> <span id="statsLuckType-zeroclassic">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zeroclassic">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zeroclassic">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zeroclassic">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zeroclassic">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zeroclassic">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zeroclassic">0</span> Workers</div>
-
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-zeroclassic">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-zeroclassic">0</span></div>
+							
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
 							<div class=""><u>Network stats</u></div>
@@ -779,7 +791,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://zelcash.equihub.pro" class="text-white">
 						<div class="d-flex flex-row">
@@ -794,17 +806,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-zelcash">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-zelcash">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-zelcash">0</span> <span id="statsLuckType-zelcash">hours</span>
-							
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zelcash">0</span> <span id="statsLuckType-zelcash">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zelcash">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zelcash">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zelcash">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zelcash">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zelcash">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zelcash">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-zelcash">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-zelcash">0</span></div>
 						
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -859,7 +873,7 @@
 
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://safecoin.equihub.pro" class="text-white">
 					<div class="d-flex flex-row">
@@ -874,16 +888,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-safecoin">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-safecoin">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-safecoin">0</span> <span id="statsLuckType-safecoin">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-safecoin">0</span> <span id="statsLuckType-safecoin">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-safecoin">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-safecoin">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-safecoin">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-safecoin">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-safecoin">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-safecoin">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-safecoin">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-safecoin">0</span></div>
 
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -939,7 +956,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://btg.equihub.pro" class="text-white">
 						<div class="d-flex flex-row">
@@ -954,16 +971,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-btg">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-btg">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-btg">0</span> <span id="statsLuckType-btg">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-btg">0</span> <span id="statsLuckType-btg">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-btg">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-btg">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-btg">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-btg">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-btg">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-btg">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-btg">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-btg">0</span></div>
 						
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -1018,7 +1038,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://zen.equihub.pro" class="text-white">
 						<div class="d-flex flex-row">
@@ -1033,17 +1053,20 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-zen">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-zen">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-zen">0</span> <span id="statsLuckType-zen">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zen">0</span> <span id="statsLuckType-zen">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zen">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zen">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zen">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zen">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zen">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zen">0</span> Workers</div>
-						
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-zen">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-zen">0</span></div>
+							
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
 							<div class=""><u>Network stats</u></div>
@@ -1097,7 +1120,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					<a href="https://zcl.equihub.pro" class="text-white">
 						<div class="d-flex flex-row">
@@ -1112,16 +1135,19 @@
 					<div class="row">
 						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><span id="statsHashrate-zcl">0.00 Sol/s</span> (Now)</div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsHashrate-zcl">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i>TTF ~ <span id="statsLuckValue-zcl">0</span> <span id="statsLuckType-zcl">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zcl">0</span> <span id="statsLuckType-zcl">hours</span>
 							</div>
-							<div><i class="fa fa-cubes"></i><span id="statsBlocks-zcl">0</span> Blocks found</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zcl">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info" id="poolFee-zcl">%</span>
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zcl">%</span>
 							</div>
-							<div><i class="fa fa-user-friends"></i><span id="statsMiners-zcl">0</span> Miners</div>
-							<div><i class="fa fa-users-cog"></i><span id="statsWorkers-zcl">0</span> Workers</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-zcl">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-zcl">0</span></div>
 						
 						</div>
 						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
@@ -1177,7 +1203,7 @@
 		
 		
 		<div class="col-xl-4 col-lg-12 d-none">
-			<div class="card mb-4 shadow">
+			<div class="card mb-4 mt-2 shadow">
 				<div class="card-header">
 					
 					<div class="d-flex flex-row">
