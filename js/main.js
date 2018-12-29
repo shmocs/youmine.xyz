@@ -125,6 +125,7 @@ function getStats(coin) {
 			$('#statsHashrate-' + coin).text(data.hashrateString);
 			$('#statsLuckDays-' + coin).text(data.luckDays);
 
+			setPoolHashRateStyle($('.'+coin+' .pool-stats .fa-tachometer-alt'), data.hashrate, data.poolStats.networkSols);
 
 			var luckType = 'hours';
 			var luckValue = data.luckHours;
@@ -178,6 +179,20 @@ function restartTimer(coin) {
 			$(this).css({width: "0"});
 			getStats(coin);
 		});
+}
+
+function setPoolHashRateStyle(tachometer, poolHash, networkHash) {
+	var hashClass = 'text-danger'; // 0 Sols
+	var poolHashPercentOfNetwork = parseFloat((poolHash * 100 / networkHash).toFixed(2)) || 0;
+
+	if (poolHash > 0) {
+		hashClass = 'text-warning';
+		if (poolHashPercentOfNetwork >= 10) hashClass = 'text-info';
+		if (poolHashPercentOfNetwork >= 50) hashClass = 'text-success';
+	}
+
+	tachometer.removeClass('text-danger').removeClass('text-warning').removeClass('text-info').removeClass('text-success').addClass(hashClass);
+	tachometer.attr('data-original-title', poolHashPercentOfNetwork.toString() + '% of Network hashrate');
 }
 
 getStats('snowgem');
