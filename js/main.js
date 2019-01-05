@@ -135,6 +135,9 @@ function getStats(coin) {
 				luckType = 'minutes';
 			} else {
 				luckValue = parseFloat(luckValue).toFixed(1);
+				if (luckValue > 999) {
+					luckValue = '∞';
+				}
 			}
 
 			$('#statsLuckValue-' + coin).text(luckValue);
