@@ -43,17 +43,7 @@
 	
 	<script>
 		var theme = ( typeof $.cookie('theme') != "undefined" ) ? $.cookie('theme') : 'style';
-		
-		if (localStorage.getItem("theme")) {
-			// Restore the saved theme
-			theme = localStorage.getItem("theme");
-		}
 		document.write('<link rel="stylesheet" id="theme_css" href="/css/'+theme+'.css?v=1">');
-
-		console.log(theme);
-		
-		//localStorage.setItem("theme", 'style_night');
-		//localStorage.setItem("theme", 'style');
 	</script>
 	
 </head>

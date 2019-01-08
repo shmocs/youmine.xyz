@@ -10,7 +10,6 @@ $(document).ready(function(){
 	theme_chk.on('change', function () {
 		//console.log($(this).is(':checked'));
 
-		//localStorage.setItem("theme", $(this).is(':checked') ? 'style_night':'style');
 		$.cookie('theme', $(this).is(':checked') ? 'style_night':'style', { domain: '.equihub.pro' });
 
 		setTimeout(function () {
