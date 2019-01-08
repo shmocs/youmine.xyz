@@ -1,5 +1,10 @@
 
 $(document).ready(function(){
+
+	var domain = document.domain,
+		domain_parts = domain.split('.'),
+		domain_tld = domain_parts.splice(-2).join('.');
+
 	$('[data-toggle="tooltip"]').tooltip();
 
 	var theme_chk = $('.theme_switch > input');
@@ -10,7 +15,7 @@ $(document).ready(function(){
 	theme_chk.on('change', function () {
 		//console.log($(this).is(':checked'));
 
-		$.cookie('theme', $(this).is(':checked') ? 'style_night':'style', { domain: '.equihub.pro' });
+		$.cookie('theme', $(this).is(':checked') ? 'style_night':'style', { domain: '.' + domain_tld });
 
 		setTimeout(function () {
 			window.location.href = window.location.href;
