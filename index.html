@@ -34,8 +34,14 @@
 	<noscript><link rel="stylesheet" id="theme_css" href="/css/style.css?v=1"></noscript>
 	
 	
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	
+	<script src="/js/main.js?v=1"></script>
+	
 	<script>
-		var theme = 'style';
+		var theme = ( typeof $.cookie('theme') != "undefined" ) ? 'style' : $.cookie('theme');
 		
 		if (localStorage.getItem("theme")) {
 			// Restore the saved theme
@@ -44,7 +50,9 @@
 		document.write('<link rel="stylesheet" id="theme_css" href="/css/'+theme+'.css?v=1">');
 
 		console.log(theme);
-
+		$.cookie('theme', theme, { domain: '.equihub.pro' });
+		
+		
 		//localStorage.setItem("theme", 'style_night');
 		//localStorage.setItem("theme", 'style');
 	</script>
@@ -1243,20 +1251,8 @@
 		Copyright 2018. All Rights Reserved by EquiHub.pro
 		<!--<a href="javascript:void(0)" class="text-warning linkborder">Facebook link.</a>-->
 	</div>
-
-	
 	
 </div>
-
-
-<script src="/js/jquery.min.js"></script>
-<script src="/js/popper.min.js"></script>
-<script src="/js/bootstrap.min.js"></script>
-
-<script src="/js/main.js?v=1"></script>
-
-<script>
-</script>
 
 </body>
 </html>
