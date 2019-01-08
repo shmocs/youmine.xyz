@@ -42,7 +42,7 @@
 	<script src="/js/main.js?v=1"></script>
 	
 	<script>
-		var theme = ( typeof $.cookie('theme') != "undefined" ) ? 'style' : $.cookie('theme');
+		var theme = ( typeof $.cookie('theme') != "undefined" ) ? $.cookie('theme') : 'style';
 		
 		if (localStorage.getItem("theme")) {
 			// Restore the saved theme
