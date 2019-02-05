@@ -115,13 +115,16 @@ function getStats(coin) {
 				|| data.symbol == 'BTG'
 				|| data.symbol == 'ZEN'
 				|| data.symbol == 'ZCL'
-				|| data.symbol == 'BTH') && data.name != 'solo-bth'
+				|| data.symbol == 'BTH') && data.name != 'solo-bth' && data.name != 'solo-bgold'
 
 			) {
 				coin = data.symbol.toLowerCase();
 			} else {
 				coin = data.name;
 			}
+			console.log(coin);
+			//exceptions
+			if (coin == 'solo-bgold') coin = 'solo-btg';
 
 			$('#poolFee-' + coin).text(data.poolFee);
 			$('#statsBlocks-' + coin).text(data.poolStats.validBlocks);
@@ -212,6 +215,7 @@ getStats('safecoin');
 getStats('vidulum');
 getStats('bzc');
 getStats('btg');
+getStats('solo-btg');
 getStats('zen');
 getStats('zcl');
 getStats('bth');
