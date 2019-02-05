@@ -122,7 +122,8 @@ function getStats(coin) {
 			} else {
 				coin = data.name;
 			}
-			console.log(coin);
+			//console.log(coin);
+
 			//exceptions
 			if (coin == 'solo-bgold') coin = 'solo-btg';
 
