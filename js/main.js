@@ -115,7 +115,7 @@ function getStats(coin) {
 				|| data.symbol == 'BTG'
 				|| data.symbol == 'ZEN'
 				|| data.symbol == 'ZCL'
-				|| data.symbol == 'BTH') && data.name != 'solo-bth' && data.name != 'solo-bgold'
+				|| data.symbol == 'BTH') && data.name != 'solo-bth' && data.name != 'solo-bgold' && data.name != 'solo-zen'
 
 			) {
 				coin = data.symbol.toLowerCase();
@@ -218,6 +218,7 @@ getStats('bzc');
 getStats('btg');
 getStats('solo-btg');
 getStats('zen');
+getStats('solo-zen');
 getStats('zcl');
 getStats('bth');
 getStats('solo-bth');
