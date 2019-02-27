@@ -79,6 +79,7 @@
 					<a class="dropdown-item" href="https://bzc.equihub.pro"><img src="/images/bitzec.png" class="coin-logo" /> BitZec</a>
 					<a class="dropdown-item" href="https://zeroclassic.equihub.pro"><img src="/images/zeroclassic.png" class="coin-logo" /> ZeroClassic</a>
 					<a class="dropdown-item" href="https://zelcash.equihub.pro"><img src="/images/zelcash.png" class="coin-logo" /> ZelCash</a>
+					<a class="dropdown-item" href="https://solo-zel.equihub.pro"><img src="/images/zelcash.png" class="coin-logo" /> ZelCash SOLO</a>
 				</div>
 			</li>
 			<li class="nav-item dropdown">
@@ -1360,6 +1361,87 @@
 					
 					<div align="center">
 						<i class="fa fa-bomb"></i> <a class="text-info" href="https://zelcash.equihub.pro">Let's mine some ZelCash</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 mt-2 shadow solo-zel">
+				<div class="card-header">
+					<a href="https://solo-zel.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/zelcash.png" alt="ZEL" class="coin-logo" /></div>
+							<div class="px-2 pt-1">ZelCash SOLO (144_5)</div>
+							<div class="ml-auto align-self-center"><i class="loader-solo-zel fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-solo-zel">0.00 Sol/s</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-zel">0</span> <span id="statsLuckType-solo-zel">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-zel">0</span></div>
+							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
+							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
+							<!--</div>-->
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-zel">%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-solo-zel">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-solo-zel">0</span></div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-zel">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-zel">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.zel.cash/" target="_blank"><span id="statsNetworkBlocks-solo-zel">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmations-solo-zel">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnections-solo-zel">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersion-solo-zel">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersion-solo-zel">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-solo-zel my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span class="ZEL-statsMarketPriceUSD">0.00</span></td>
+								<td><i class="fab fa-bitcoin"></i><span class="ZEL-statsMarketPriceBTC">0.00000000</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i class="ZEL-btc1hArrow fa fa-arrow-right"></i><small>1h:</small> <span class="ZEL-btc1h">0.00</span>%</td>
+								<td class="text-success"><i class="ZEL-btc24hArrow fa fa-arrow-right"></i><small>24h:</small> <span class="ZEL-btc24h">0.00</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span class="ZEL-statsMarketVolumeUSD">0.00</span> (<span class="ZEL-statsMarketVolumeBTC">0.00</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://solo-zel.equihub.pro">Let's mine some ZelCash</a>
 					</div>
 				</div>
 			</div>
