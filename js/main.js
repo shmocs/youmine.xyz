@@ -115,7 +115,7 @@ function getStats(coin) {
 				|| data.symbol == 'BTG'
 				|| data.symbol == 'ZEN'
 				|| data.symbol == 'ZCL'
-				|| data.symbol == 'BTH') && data.name != 'solo-bth' && data.name != 'solo-bgold' && data.name != 'solo-zen' && data.name != 'solo-zel'
+				|| data.symbol == 'BTH') && data.name != 'solo-bth' && data.name != 'solo-bgold' && data.name != 'solo-zen' && data.name != 'solo-zel' && data.name != 'solo-bze'
 
 			) {
 				coin = data.symbol.toLowerCase();
@@ -136,21 +136,32 @@ function getStats(coin) {
 
 			setPoolHashRateStyle($('.'+coin+' .pool-stats .fa-tachometer-alt'), data.hashrate, data.poolStats.networkSols);
 
-			var luckType = 'hours';
-			var luckValue = data.luckHours;
+			if (data.timeToFindString) {
+				$('#statsTimeToFind-' + coin).text(data.timeToFindString);
+				$('#statsLastBlockFound-' + coin).text(data.lastBlockFoundString);
 
-			if (luckValue < 0.5) {
-				luckValue = parseFloat(luckValue * 60).toFixed(0);
-				luckType = 'minutes';
 			} else {
-				luckValue = parseFloat(luckValue).toFixed(1);
-				if (luckValue > 999) {
-					luckValue = '∞';
+				// coins that don't have yet these stats in api
+				var luckType = 'hours';
+				var luckValue = data.luckHours;
+
+				if (luckValue < 0.5) {
+					luckValue = parseFloat(luckValue * 60).toFixed(0);
+					luckType = 'minutes';
+				} else {
+					luckValue = parseFloat(luckValue).toFixed(1);
+					if (luckValue > 999) {
+						luckValue = '∞';
+					}
 				}
+
+				$('#statsLuckValue-' + coin).text(luckValue);
+				$('#statsLuckType-' + coin).text(luckType);
 			}
 
-			$('#statsLuckValue-' + coin).text(luckValue);
-			$('#statsLuckType-' + coin).text(luckType);
+			$('#statsBlocks12h24h-' + coin).text(data.poolStats.last12hBlocks + '/' + data.poolStats.last24hBlocks);
+			$('#statsNetworkDiffMin24h-' + coin).text(data.poolStats.networkMinDiff24h);
+			$('#statsNetworkDiffMax24h-' + coin).text(data.poolStats.networkMaxDiff24h);
 
 			$('#statsNetworkSols-' + coin).text(data.poolStats.networkSolsString);
 			$('#statsNetworkDiff-' + coin).text(parseFloat(data.poolStats.networkDiff).toFixed(2));
@@ -223,3 +234,4 @@ getStats('zcl');
 getStats('bth');
 getStats('solo-bth');
 getStats('solo-zel');
+getStats('solo-bze');

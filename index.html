@@ -149,13 +149,17 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-snowgem">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-snowgem">0</span> <span id="statsLuckType-snowgem">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsTimeToFind-snowgem"> - </span>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Time elapsed since last block was found by our pool">
+								<i class="fa fa-dice"></i><small>LBF:</small> ~ <span id="statsLastBlockFound-snowgem"> - </span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-snowgem">0</span></div>
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-snowgem">0/0</span></div>
 							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
 							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
@@ -170,6 +174,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-snowgem">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-snowgem">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-snowgem">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-snowgem">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~60 seconds a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://insight.snowgem.org/" target="_blank"><span id="statsNetworkBlocks-snowgem">0</span></a>
@@ -230,13 +236,17 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-solo-xsg">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-xsg">0</span> <span id="statsLuckType-solo-xsg">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsTimeToFind-solo-xsg"> - </span>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Time elapsed since last block was found by our pool">
+								<i class="fa fa-dice"></i><small>LBF:</small> ~ <span id="statsLastBlockFound-solo-xsg"> - </span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-xsg">0</span></div>
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-solo-xsg">0/0</span></div>
 							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
 							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
 							<!--</div>-->
@@ -251,6 +261,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-xsg">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-xsg">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-solo-xsg">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-solo-xsg">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~60 seconds a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://insight.snowgem.org/" target="_blank"><span id="statsNetworkBlocks-solo-xsg">0</span></a>
@@ -313,16 +325,17 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-zcl">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zcl">0</span> <span id="statsLuckType-zcl">hours</span>
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsTimeToFind-zcl"> - </span>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Time elapsed since last block was found by our pool">
+								<i class="fa fa-dice"></i><small>LBF:</small> ~ <span id="statsLastBlockFound-zcl"> - </span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zcl">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-zcl">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zcl">%</span>
 							</div>
@@ -334,6 +347,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-zcl">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-zcl">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-zcl">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-zcl">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="http://explorer.zclmine.pro/" target="_blank"><span id="statsNetworkBlocks-zcl">0</span></a>
@@ -395,16 +410,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-btg">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-btg">0</span> <span id="statsLuckType-btg">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-btg">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-btg">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-btg">%</span>
 							</div>
@@ -416,6 +429,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-btg">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-btg">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-btg">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-btg">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 600s. Every ~10 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.bitcoingold.org/insight/" target="_blank"><span id="statsNetworkBlocks-btg">0</span></a>
@@ -476,16 +491,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-solo-btg">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-btg">0</span> <span id="statsLuckType-solo-btg">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-btg">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-solo-btg">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-btg">%</span>
 							</div>
@@ -497,6 +510,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-btg">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-btg">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-solo-btg">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-solo-btg">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 600s. Every ~10 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.bitcoingold.org/insight/" target="_blank"><span id="statsNetworkBlocks-solo-btg">0</span></a>
@@ -557,16 +572,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-safecoin">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-safecoin">0</span> <span id="statsLuckType-safecoin">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-safecoin">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-safecoin">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-safecoin">%</span>
 							</div>
@@ -578,6 +591,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-safecoin">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-safecoin">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-safecoin">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-safecoin">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.safecoin.org/" target="_blank"><span id="statsNetworkBlocks-safecoin">0</span></a>
@@ -640,16 +655,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-zen">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zen">0</span> <span id="statsLuckType-zen">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zen">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-zen">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zen">%</span>
 							</div>
@@ -661,6 +674,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-zen">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-zen">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-zen">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-zen">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.zen-solutions.io/" target="_blank"><span id="statsNetworkBlocks-zen">0</span></a>
@@ -715,23 +730,21 @@
 						<div class="d-flex flex-row">
 							<div class="p-0"><img src="/images/horizen.png" alt="ZEN" class="coin-logo" /></div>
 							<div class="px-2 pt-1">Horizen SOLO (200_9)</div>
-							<div class="ml-auto align-self-center"><i class="loader-zen fa fa-sync-alt fa-spin"></i></div>
+							<div class="ml-auto align-self-center"><i class="loader-solo-zen fa fa-sync-alt fa-spin"></i></div>
 						</div>
 					</a>
 				</div>
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-solo-zen">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-zen">0</span> <span id="statsLuckType-solo-zen">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-zen">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-solo-zen">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-zen">%</span>
 							</div>
@@ -743,6 +756,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-zen">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-zen">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-solo-zen">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-solo-zen">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.zen-solutions.io/" target="_blank"><span id="statsNetworkBlocks-solo-zen">0</span></a>
@@ -767,7 +782,7 @@
 						<table class="table table-bordered table-sm text-center">
 							<tbody>
 							<tr>
-								<td><i class="fa fa-dollar-sign"></i><span class="solo-zen-statsMarketPriceUSD">-</span></td>
+								<td><i class="fa fa-dollar-sign"></i><span class="ZEN-statsMarketPriceUSD">-</span></td>
 								<td><i class="fab fa-bitcoin"></i><span class="ZEN-statsMarketPriceBTC">-</span></td>
 							</tr>
 							<tr>
@@ -805,16 +820,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-vidulum">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-vidulum">0</span> <span id="statsLuckType-vidulum">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-vidulum">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-vidulum">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-vidulum">%</span>
 							</div>
@@ -826,6 +839,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-vidulum">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-vidulum">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-vidulum">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-vidulum">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.vidulum.app/" target="_blank"><span id="statsNetworkBlocks-vidulum">0</span></a>
@@ -887,16 +902,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-bth">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-bth">0</span> <span id="statsLuckType-bth">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-bth">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-bth">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-bth">%</span>
 							</div>
@@ -908,6 +921,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-bth">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-bth">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-bth">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-bth">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 10m. Every ~600 seconds a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.bithereum.network/" target="_blank"><span id="statsNetworkBlocks-bth">0</span></a>
@@ -969,16 +984,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-solo-bth">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-bth">0</span> <span id="statsLuckType-solo-bth">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-bth">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-solo-bth">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-bth">%</span>
 							</div>
@@ -990,6 +1003,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-bth">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-bth">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-solo-bth">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-solo-bth">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 10m. Every ~600 seconds a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.bithereum.network/" target="_blank"><span id="statsNetworkBlocks-solo-bth">0</span></a>
@@ -1039,88 +1054,6 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
-			<div class="card mb-4 mt-2 shadow bzedge">
-				<div class="card-header">
-					<a href="https://bzedge.equihub.pro" class="text-white">
-						<div class="d-flex flex-row">
-							<div class="p-0"><img src="/images/bzedge.png" alt="BZE" class="coin-logo" /></div>
-							<div class="px-2 pt-1">BZEdge (144_5)</div>
-							<div class="ml-auto align-self-center"><i class="loader-bzedge fa fa-sync-alt fa-spin"></i></div>
-						</div>
-					</a>
-				</div>
-				<div class="card-body text-muted">
-					
-					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
-							<div class=""><u>Pool stats</u></div>
-							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-bzedge">0.00 Sol/s</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
-								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-bzedge">0</span> <span id="statsLuckType-bzedge">hours</span>
-							</div>
-							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-bzedge">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
-							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
-								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-bzedge">%</span>
-							</div>
-							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-bzedge">0</span></div>
-							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-bzedge">0</span></div>
-						
-						</div>
-						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
-							<div class=""><u>Network stats</u></div>
-							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-bzedge">0.00 KSol/s</span></div>
-							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-bzedge">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
-								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
-								<a class="text-info" href="https://explorer.bzedge.org/" target="_blank"><span id="statsNetworkBlocks-bzedge">0</span></a>
-							</div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
-								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmations-bzedge">100</span>
-							</div>
-							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnections-bzedge">0</span></div>
-							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersion-bzedge">
-								<i class="fa fa-globe"></i><small><span id="statsNetworkVersion-bzedge">//</span></small>
-							</div>
-						</div>
-					</div>
-					
-					<div class="stats-progress stats-progress-bzedge my-2">
-						<div class="progress progress-striped active">
-							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-						</div>
-					</div>
-					
-					<div class="table-responsive boxStatsList">
-						<table class="table table-bordered table-sm text-center">
-							<tbody>
-							<tr>
-								<td><i class="fa fa-dollar-sign"></i><span class="BZE-statsMarketPriceUSD">-</span></td>
-								<td><i class="fab fa-bitcoin"></i><span class="BZE-statsMarketPriceBTC">-</span></td>
-							</tr>
-							<tr>
-								<td class="text-success"><i class="BZE-btc1hArrow fa fa-arrow-right"></i><small>1h:</small> <span class="BZE-btc1h">?</span>%</td>
-								<td class="text-success"><i class="BZE-btc24hArrow fa fa-arrow-right"></i><small>24h:</small> <span class="BZE-btc24h">?</span>%</td>
-							</tr>
-							<tr>
-								<td colspan="2"><small>24h volume:</small> $<span class="BZE-statsMarketVolumeUSD">0.00</span> (<span class="BZE-statsMarketVolumeBTC">0</span> BTC)</td>
-							</tr>
-							</tbody>
-						</table>
-					</div>
-					
-					
-					<div align="center">
-						<i class="fa fa-bomb"></i> <a class="text-info" href="https://bzedge.equihub.pro">Let's mine some BZEdge</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		
-		
-		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 mt-2 shadow bzc">
 				<div class="card-header">
 					<a href="https://bzc.equihub.pro" class="text-white">
@@ -1134,16 +1067,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-bzc">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-bzc">0</span> <span id="statsLuckType-bzc">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-bzc">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-bzc">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-bzc">%</span>
 							</div>
@@ -1155,6 +1086,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-bzc">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-bzc">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-bzc">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-bzc">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minute a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="http://bitzec.cf/" target="_blank"><span id="statsNetworkBlocks-bzc">0</span></a>
@@ -1204,6 +1137,173 @@
 		
 		
 		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 mt-2 shadow bzedge">
+				<div class="card-header">
+					<a href="https://bzedge.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/bzedge.png" alt="BZE" class="coin-logo" /></div>
+							<div class="px-2 pt-1">BZEdge (144_5)</div>
+							<div class="ml-auto align-self-center"><i class="loader-bzedge fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-bzedge">0.00 Sol/s</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-bzedge">0</span> <span id="statsLuckType-bzedge">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-bzedge">0</span></div>
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-bzedge">0/0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-bzedge">%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-bzedge">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-bzedge">0</span></div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-bzedge">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-bzedge">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-bzedge">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-bzedge">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.bzedge.org/" target="_blank"><span id="statsNetworkBlocks-bzedge">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmations-bzedge">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnections-bzedge">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersion-bzedge">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersion-bzedge">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-bzedge my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span class="BZE-statsMarketPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span class="BZE-statsMarketPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i class="BZE-btc1hArrow fa fa-arrow-right"></i><small>1h:</small> <span class="BZE-btc1h">?</span>%</td>
+								<td class="text-success"><i class="BZE-btc24hArrow fa fa-arrow-right"></i><small>24h:</small> <span class="BZE-btc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span class="BZE-statsMarketVolumeUSD">0.00</span> (<span class="BZE-statsMarketVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://bzedge.equihub.pro">Let's mine some BZEdge</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+		<div class="col-xl-4 col-lg-12">
+			<div class="card mb-4 mt-2 shadow solo-bze">
+				<div class="card-header">
+					<a href="https://solo-bze.equihub.pro" class="text-white">
+						<div class="d-flex flex-row">
+							<div class="p-0"><img src="/images/bzedge.png" alt="BZE" class="coin-logo" /></div>
+							<div class="px-2 pt-1">BZEdge SOLO (144_5)</div>
+							<div class="ml-auto align-self-center"><i class="loader-solo-bze fa fa-sync-alt fa-spin"></i></div>
+						</div>
+					</a>
+				</div>
+				<div class="card-body text-muted">
+					
+					<div class="row">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
+							<div class=""><u>Pool stats</u></div>
+							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-solo-bze">0.00 Sol/s</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
+								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-bze">0</span> <span id="statsLuckType-solo-bze">hours</span>
+							</div>
+							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-bze">0</span></div>
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-solo-bze">0/0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
+								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-bze">%</span>
+							</div>
+							<div><i class="fa fa-user-friends"></i><small>Miners:</small> <span id="statsMiners-solo-bze">0</span></div>
+							<div><i class="fa fa-users-cog"></i><small>Workers:</small> <span id="statsWorkers-solo-bze">0</span></div>
+						
+						</div>
+						<div class="network-stats col-sm-6 col-xs-12 boxStatsList">
+							<div class=""><u>Network stats</u></div>
+							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-bze">0.00 KSol/s</span></div>
+							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-bze">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-solo-bze">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-solo-bze">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 60s. Every ~1 minute a block is mined on the network">
+								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
+								<a class="text-info" href="https://explorer.bzedge.org/" target="_blank"><span id="statsNetworkBlocks-solo-bze">0</span></a>
+							</div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="A mined block is confirmed after 100 blocks">
+								<i class="fa fa-stopwatch" aria-hidden="true"></i><small>Confirmations:</small> <span id="statsNetworkConfirmations-solo-bze">100</span>
+							</div>
+							<div><i class="fa fa-code-branch"></i><small>Connections:</small> <span id="statsNetworkConnections-solo-bze">0</span></div>
+							<div data-toggle="tooltip" data-placement="top" data-original-title="" id="statsNetworkProtocolVersion-solo-bze">
+								<i class="fa fa-globe"></i><small><span id="statsNetworkVersion-solo-bze">//</span></small>
+							</div>
+						</div>
+					</div>
+					
+					<div class="stats-progress stats-progress-solo-bze my-2">
+						<div class="progress progress-striped active">
+							<div class="progress-bar progress-bar-striped bg-orange progress-bar-animated" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+						</div>
+					</div>
+					
+					<div class="table-responsive boxStatsList">
+						<table class="table table-bordered table-sm text-center">
+							<tbody>
+							<tr>
+								<td><i class="fa fa-dollar-sign"></i><span class="BZE-statsMarketPriceUSD">-</span></td>
+								<td><i class="fab fa-bitcoin"></i><span class="BZE-statsMarketPriceBTC">-</span></td>
+							</tr>
+							<tr>
+								<td class="text-success"><i class="BZE-btc1hArrow fa fa-arrow-right"></i><small>1h:</small> <span class="BZE-btc1h">?</span>%</td>
+								<td class="text-success"><i class="BZE-btc24hArrow fa fa-arrow-right"></i><small>24h:</small> <span class="BZE-btc24h">?</span>%</td>
+							</tr>
+							<tr>
+								<td colspan="2"><small>24h volume:</small> $<span class="BZE-statsMarketVolumeUSD">0.00</span> (<span class="BZE-statsMarketVolumeBTC">0</span> BTC)</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					
+					
+					<div align="center">
+						<i class="fa fa-bomb"></i> <a class="text-info" href="https://solo-bze.equihub.pro">Let's mine some BZEdge</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		<div class="col-xl-4 col-lg-12">
 			<div class="card mb-4 mt-2 shadow zeroclassic">
 				<div class="card-header">
 					<a href="https://zeroclassic.equihub.pro" class="text-white">
@@ -1217,16 +1317,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-zeroclassic">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zeroclassic">0</span> <span id="statsLuckType-zeroclassic">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zeroclassic">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-zeroclassic">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zeroclassic">%</span>
 							</div>
@@ -1238,6 +1336,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-zeroclassic">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-zeroclassic">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-zeroclassic">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-zeroclassic">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 120s. Every ~2 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="http://explorer.zeroclassic.org/" target="_blank"><span id="statsNetworkBlocks-zeroclassic">0</span></a>
@@ -1299,16 +1399,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-zelcash">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-zelcash">0</span> <span id="statsLuckType-zelcash">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-zelcash">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-zelcash">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-zelcash">%</span>
 							</div>
@@ -1320,6 +1418,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-zelcash">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-zelcash">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-zelcash">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-zelcash">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.zel.cash/" target="_blank"><span id="statsNetworkBlocks-zelcash">0</span></a>
@@ -1380,16 +1480,14 @@
 				<div class="card-body text-muted">
 					
 					<div class="row">
-						<div class="pool-stats col-sm-6 col-xs-12 border-right boxStatsList">
+						<div class="pool-stats col-sm-6 col-xs-12 px-2 border-right boxStatsList">
 							<div class=""><u>Pool stats</u></div>
 							<div><i class="fa fa-tachometer-alt" data-toggle="tooltip"></i><small>Hash:</small> <span id="statsHashrate-solo-zel">0.00 Sol/s</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="Estimated amount of time that may pass before the pool finds a block. (NetworkHash / PoolHash * BlockTime) / (24 * 60 * 60)">
 								<i class="fa fa-dice"></i><small>TTF:</small> ~ <span id="statsLuckValue-solo-zel">0</span> <span id="statsLuckType-solo-zel">hours</span>
 							</div>
 							<div><i class="fa fa-cubes"></i><small>Blocks found:</small> <span id="statsBlocks-solo-zel">0</span></div>
-							<!--<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="<p class='text-left'>0.6% - to equihub.pro<br>0.1% - to DEV fund <i class='fa fa-smile'></i></p>">-->
-							<!--<i class="fa fa-money-bill-wave"></i>Pool Fee <span class="text-info">0.7%</span>-->
-							<!--</div>-->
+							<div><i class="fa fa-cubes"></i><small>Blocks 12h/24h:</small> <span id="statsBlocks12h24h-solo-zel">0/0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-html="true" data-original-title="">
 								<i class="fa fa-money-bill-wave"></i><small>Pool Fee:</small> <span class="text-info" id="poolFee-solo-zel">%</span>
 							</div>
@@ -1401,6 +1499,8 @@
 							<div class=""><u>Network stats</u></div>
 							<div><i class="fa fa-tachometer-alt"></i><small>Hash:</small> <span id="statsNetworkSols-solo-zel">0.00 KSol/s</span></div>
 							<div><i class="fa fa-unlock-alt" aria-hidden="true"></i><small>Diff:</small> <span id="statsNetworkDiff-solo-zel">0</span></div>
+							<div><i class="fa fa-arrow-down" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMin24h-solo-zel">0</span></div>
+							<div><i class="fa fa-arrow-up" aria-hidden="true"></i><small>Diff 24h:</small> <span id="statsNetworkDiffMax24h-solo-zel">0</span></div>
 							<div data-toggle="tooltip" data-placement="top" data-original-title="BlockTime: 150s. Every ~2.5 minutes a block is mined on the network">
 								<i class="fa fa-cube" aria-hidden="true"></i><small>Block:</small>
 								<a class="text-info" href="https://explorer.zel.cash/" target="_blank"><span id="statsNetworkBlocks-solo-zel">0</span></a>
