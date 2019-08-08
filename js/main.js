@@ -97,7 +97,7 @@ getMarketStats(2912); //XSG
 //getMarketStats(9999); //BZC
 //getMarketStats(9999); //ZERC
 getMarketStats(3029); //ZEL
-//getMarketStats(9999); //SAFE
+getMarketStats(3918); //SAFE
 //getMarketStats(9999); //BTH
 
 
